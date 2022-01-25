@@ -19,11 +19,11 @@
 #
 ####
 
-export AWS_CLUSTER_ID="c7k2vptw0u5mgaoug5dg"
-export IBM_CLUSTER_ID="c7k3sfkw0rg6mjaceq7g"
+export AWS_CLUSTER_ID="c7o5jt8w0o6g5fkl3rp0"
+export IBM_CLUSTER_ID="c7o68suw0jvhnc82ukg0"
 export ALL_CLUSTERS="${AWS_CLUSTER_ID} ${IBM_CLUSTER_ID}"
 
-export SAT_LOCATION="c7k1ppsw0375na2ceq5g"
+export SAT_LOCATION="c7o2a02w03bj8394o9ng"
 
 export DEV_CLUSTER_GROUP="food-delivery-development-clusters"
 export PROD_CLUSTER_GROUP="food-delivery-production-clusters"
