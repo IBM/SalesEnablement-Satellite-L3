@@ -1,0 +1,65 @@
+# Project info
+site_name: IBM Cloud Satellite L3 Demonstration
+site_description: IBM Cloud Satellite Sales Enablement Level 3 Demonstration
+site_author: Andrew R. Jones (andrewj@us.ibm.com)
+copyright: Copyright &copy; 2022 IBM 
+
+# Repository
+repo_name: IBM/SalesEnablement-Satellite-L3
+#repo_url: https://github.com/IBM/SalesEnablement-Satellite-L3/
+#edit_uri: edit/master/docs
+docs_dir: docs
+
+
+nav:
+  - Home: README.md
+  - IBM Cloud Satellite Overview:
+    - '01.01 Introduction': 'environment/01.01 Introduction.md'
+    - '01.02 Prerequisites': 'environment/01.02 Prerequisites.md'
+    - '01.03 Using the demonstration guide': 'environment/01.03 Using the demonstration guide.md'
+    - '02.01 What are Locations': 'environment/02.01 What are Locations.md'
+    - '02.02 Watch: How to provision a Location in AWS': 'environment/02.02 Watch: How to provision a Location in AWS.md'
+    - '02.03 Demonstrate: How to provision a Location': 'environment/02.03 Demonstrate: How to provision a Location.md'
+    - '03.01 What are Links': 'environment/03.01 What are Links.md'
+    - '04.01 Using the IBM Cloud command line interfaces (CLIs)': 'environment/04.01 Using the IBM Cloud command line interfaces (CLIs).md'
+    - '05.01 Next steps': 'environment/05.01 Next steps.md'
+
+  - Deploy an OpenShift application: 
+    - '01.01 Introduction': 'deploy-application/01.01 Introduction.md'
+    - '01.02 The Food Delivery Application': 'deploy-application/01.02 The Food Delivery Application.md'
+    - '01.03 Demonstration flow': 'deploy-application/01.03 Demonstration flow.md'
+    - '01.04 Watch the demonstration': 'deploy-application/01.04 Watch the demonstration.md'
+    - '02.01 Create cluster groups': 'deploy-application/02.01 Create cluster groups.md'
+    - '03.01 Create a configuration': 'deploy-application/03.01 Create a configuration.md'
+    - '03.02 Create versions': 'deploy-application/03.02 Create versions.md'
+    - '03.03 Create subscriptions': 'deploy-application/03.03 Create subscriptions.md'
+    - '03.04 Verify the application is deployed': 'deploy-application/03.04 Verify the application is deployed.md'
+    - '04.01 Update the development and production frontends': 'deploy-application/04.01 Update the development and production frontends.md'
+    - '04.02 Perform a rollback': 'deploy-application/04.02 Perform a rollback.md'
+    - '05.01 Next steps': 'deploy-application/05.01 Next steps.md'
+
+theme: 
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+extra:
+  generator: false
+
+markdown_extensions:
+  - sane_lists
+  - pymdownx.details
+  - admonition
+
