@@ -28,7 +28,7 @@ export SAT_LOCATION="c7o2a02w03bj8394o9ng"
 export DEV_CLUSTER_GROUP="food-delivery-development-clusters"
 export PROD_CLUSTER_GROUP="food-delivery-production-clusters"
 
-export SAT_ACCESS_GROUP="satellite-user"
+export SAT_ACCESS_GROUP="satellite-users"
 
 
 
