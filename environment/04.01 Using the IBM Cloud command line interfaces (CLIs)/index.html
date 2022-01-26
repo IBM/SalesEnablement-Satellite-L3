@@ -668,36 +668,38 @@ Enter a number&gt; 2</p>
 </ol>
 <pre><code class="language-execute">ibmcloud sat locations
 </code></pre>
-<p>Sample output:</p>
-<pre><code>Retrieving locations...
+<details class="example">
+<summary>Example output</summary>
+<p>Retrieving locations...
 OK
-Name              ID                     Status   Ready   Created       Hosts (used/total)   Managed From   
-aws-us-east-2-2   c5od6rnd0brhfgptjv3g   normal   yes     3 weeks ago   5 / 5                dal   
-aws-us-east2      c5p2cpnd06h5kdnpri1g   normal   yes     3 weeks ago   6 / 6                dal 
-</code></pre>
+Name            ID                     Status   Ready   Created     Hosts (used/total)   Managed From <br />
+aws-us-east-2   c7o2a02w03bj8394o9ng   normal   yes     1 day ago   12 / 12              wdc   </p>
+</details>
 <ol start="3">
 <li>Get the details for a specific IBM Cloud Satellite Location.</li>
 </ol>
 <pre><code class="language-execute">ibmcloud sat location get --location ##SATELLITE.location##
 </code></pre>
-<p>Sample output:</p>
-<pre><code>Retrieving location...
-OK
-
-Name:                           aws-us-east2   
-ID:                             c5p2cpnd06h5kdnpri1g   
-Created:                        2021-10-21 21:48:06 -0500 (3 weeks ago)   
-Creator:                        -   
-Managed From:                   dal   
-State:                          normal   
-Ready for deployments:          yes   
-Message:                        R0001: The Satellite location is ready for operations.   
-Hosts Available:                0   
-Hosts Total:                    6   
-Host Zones:                     us-east-2a, us-east-2b, us-east-2c   
-Public Service Endpoint URL:    https://c119.us-south.satellite.cloud.ibm.com:31166   
-Private Service Endpoint URL:   -   
-</code></pre>
+<details class="example">
+<summary>Example output</summary>
+<p>Retrieving location...
+OK</p>
+<p>Name:                           aws-us-east-2 <br />
+ID:                             c7o2a02w03bj8394o9ng <br />
+Created:                        2022-01-25 16:27:44 +0000 (1 day ago) <br />
+Managed From:                   wdc <br />
+State:                          normal <br />
+Ready for deployments:          yes <br />
+Message:                        R0001: The Satellite location is ready for operations. <br />
+Hosts Available:                0 <br />
+Hosts Total:                    12 <br />
+Host Zones:                     us-east-2a, us-east-2b, us-east-2c <br />
+Public Service Endpoint URL:    https://c117.us-east.satellite.cloud.ibm.com:30051 <br />
+Private Service Endpoint URL:   - <br />
+OpenVPN Server Port:            32196 <br />
+Ignition Server Port:           - <br />
+Konnectivity Server Port:       -   </p>
+</details>
 <ol start="4">
 <li>Get a list of the hosts associated with a specific IBM Cloud Satellite Location.</li>
 </ol>
@@ -707,13 +709,18 @@ Private Service Endpoint URL:   -
 <summary>Example output</summary>
 <p>Retrieving hosts...
 OK
-Name            ID                     State      Status   Zone         Cluster                     Worker ID                                                Worker IP <br />
-ip-10-0-1-17    e88ae62b14e31deda15e   assigned   Ready    us-east-2a   infrastructure              sat-ip100117-d7d4103f1c5726d4a52f33585a2a2b13f1ec9b72    10.0.1.17 <br />
-ip-10-0-1-96    dea6e5434a939c30ccbb   assigned   Ready    us-east-2a   mycluster-satellite-east2   sat-ip100196-435600c7cc562d8521b7b368a81d7bef31321831    10.0.1.96 <br />
-ip-10-0-2-194   0e654b8a38ff019e2084   assigned   Ready    us-east-2b   infrastructure              sat-ip1002194-a54fdd9f46500933251304313606d27ee83409d4   10.0.2.194 <br />
-ip-10-0-2-238   0fd7c467385d9bd9ac82   assigned   Ready    us-east-2b   mycluster-satellite-east2   sat-ip1002238-c53f9ad15c882298d7ef3cc00ab86e83c90b236d   10.0.2.    238 <br />
-ip-10-0-3-172   5627c061077b1b433b6b   assigned   Ready    us-east-2c   mycluster-satellite-east2   sat-ip1003172-085653db473d4667f8e09f0bf485cafc330e75d6   10.0.3.172 <br />
-ip-10-0-3-88    6a95662f89ad13efa725   assigned   Ready    us-east-2c   infrastructure              sat-ip100388-3b68cfd4d208185d798b2eba41e6193f70c36dce    10.0.3.88   </p>
+Name            ID                     State      Status   Zone         Cluster          Worker ID                                                Worker IP         ip-10-0-1-114   b7f18e883cd88cace8d7   assigned   Ready    us-east-2a   aws-os-cluster   sat-ip1001114-df552aab5e6958f69e3e2004ff8de9e21e941cdf   10.0.1.114 <br />
+ip-10-0-1-250   e30ad9324972c7197d8b   assigned   Ready    us-east-2a   aws-os-cluster   sat-ip1001250-4a2ea8e29c0222974e39d954a4e20f26b7ee702a   10.0.1.250 <br />
+ip-10-0-1-51    31ce10f9188d8f39f498   assigned   Ready    us-east-2a   aws-os-cluster   sat-ip100151-7fe9c382d5b86bd3de7113f65189bcbf5c720ab3    10.0.1.51 <br />
+ip-10-0-1-80    d22325e1dc4741fd12f2   assigned   Ready    us-east-2a   infrastructure   sat-ip100180-9506c0d50c1faf25ebdee971cd8fb04b03a85f46    10.0.1.80 <br />
+ip-10-0-2-179   c092b543a00d50b93890   assigned   Ready    us-east-2b   aws-os-cluster   sat-ip1002179-f4a6bd55983e7e0a8d1071b073dd7bdc983d3f80   10.0.2.179 <br />
+ip-10-0-2-4     3839f171b846beb1c1e9   assigned   Ready    us-east-2b   aws-os-cluster   sat-ip10024-2dd947a2bfbbbc129e2c1b618c0e135481ac44b8     10.0.2.4 <br />
+ip-10-0-2-49    58a414bd88d303fca850   assigned   Ready    us-east-2b   aws-os-cluster   sat-ip100249-4394d34dc43811c985e6211df97abe31472a8a69    10.0.2.49 <br />
+ip-10-0-2-92    ba5337e855ee8b94477f   assigned   Ready    us-east-2b   infrastructure   sat-ip100292-92e16bb3dffb35810fd8fe8a5003abf1745adf81    10.0.2.92 <br />
+ip-10-0-3-101   a2650ddf093fbb8b70bc   assigned   Ready    us-east-2c   aws-os-cluster   sat-ip1003101-2584aa634011ba4d8a0f57986f4f6f087fa895cf   10.0.3.101 <br />
+ip-10-0-3-111   6dab45fb390d80f5c4d2   assigned   Ready    us-east-2c   aws-os-cluster   sat-ip1003111-5c9a519ad61010c17548c540a510d738f296d975   10.0.3.111 <br />
+ip-10-0-3-157   f00f81d01b6860e050df   assigned   Ready    us-east-2c   infrastructure   sat-ip1003157-62a198744fdd0577ea0640a816f8a2f35d2a2198   10.0.3.157 <br />
+ip-10-0-3-63    4a856f18f177ffc014eb   assigned   Ready    us-east-2c   aws-os-cluster   sat-ip100363-6bcb834add6d924ce2a0a0772835ae8794497162    10.0.3.63   </p>
 </details>
 <details class="failure">
 <summary>If this fails</summary>
@@ -731,8 +738,8 @@ ip-10-0-3-88    6a95662f89ad13efa725   assigned   Ready    us-east-2c   infrastr
 <details class="example">
 <summary>Example output</summary>
 <p>Retrieving host details...</p>
-<p>Name:     ip-10-0-1-17 <br />
-ID:       e88ae62b14e31deda15e <br />
+<p>Name:     ip-10-0-1-114 <br />
+ID:       b7f18e883cd88cace8d7 <br />
 State:    assigned <br />
 Status:   Ready <br />
 Zone:     us-east-2a   </p>
@@ -740,13 +747,14 @@ Zone:     us-east-2a   </p>
 cpu      4 <br />
 env      prod <br />
 memory   15963200 <br />
+os       RHEL7 <br />
 zone     us-east-2a   </p>
 <p>Assignment      <br />
-Cluster:       infrastructure <br />
+Cluster:       aws-os-cluster <br />
 Worker Pool:   default <br />
-Worker ID:     sat-ip100117-d7d4103f1c5726d4a52f33585a2a2b13f1ec9b72 <br />
-Worker IP:     10.0.1.17 <br />
-Date:          3 weeks ago <br />
+Worker ID:     sat-ip1001114-df552aab5e6958f69e3e2004ff8de9e21e941cdf <br />
+Worker IP:     10.0.1.114 <br />
+Date:          21 hours ago <br />
 OK</p>
 </details>
 <p>All the commands executed above are commands that list or view the details of an IBM Cloud Satellite object. There are also commands to create, remove, and modify these objects. You will perform these types of actions in a later demonstration. </p>
