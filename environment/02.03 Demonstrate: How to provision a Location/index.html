@@ -617,11 +617,11 @@
 </ol>
 <p><strong>Note:</strong> The IBM Cloud Portal will be opened in a new browser tab. You need to switch between this tab and the new tabs to accomplish many of the lab tasks. You may want to open the new tabs in new windows and display both browser windows at the same time. You may need to disable pop-up blockers if you do not see the new tabs. Also, Firefox and Safari browsers are recommended as the image quality of screen captures when viewed in Chrome are sub-optimum.</p>
 <ol start="2">
-<li>Change from your IBM Cloud account to the <strong>##ACCOUNT.shortid## - ##ACCOUNT.name##</strong> IBM Cloud account.</li>
+<li>Change from your IBM Cloud account to the demonstration IBM Cloud account: <strong>2435442 - ITZ - Satellite</strong>*.</li>
 </ol>
 <p><img alt="" src="../_attachments/ChangeAccounts.png" /></p>
 <p><strong>Note:</strong> If your browser window is narrow, you may see this icon: <img alt="" src="../_attachments/SwitchAccountsIcon.png" /> instead of the current account name as shown in the screen capture above.</p>
-<p><strong>Note:</strong> You may need to refresh the browser page or repeat step 1 after switching accounts to *<em>##ACCOUNT.shortid## - ##ACCOUNT.name##</em>.</p>
+<p><strong>Note:</strong> You may need to refresh the browser page or repeat step 1 after switching accounts to <strong>2435442 - ITZ - Satellite</strong>*.</p>
 <ol start="3">
 <li>Click <strong>Create a Satellite Location</strong>.</li>
 </ol>
@@ -643,17 +643,23 @@
 <p><img alt="" src="../_attachments/LocationsLink.png" /></p>
 <p>Sample dialog: Once the Satellite Location is fully deployed, you can access the details of the Location. Here you see the current Satellite Locations that have been deployed, their state, and additional information. Let us look at the details of one of these.</p>
 <ol start="8">
-<li>Click <strong>##SATELLITE.location##</strong>. </li>
+<li>Click <strong>aws-us-east-2</strong>. </li>
 </ol>
 <p><img alt="" src="../_attachments/SatelliteLocations2.png" /></p>
-<p><strong>Note: the actual Satellite Location details may differ from the screen capture above. You will want to adjust your dialog to what you see.</strong></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The actual Satellite Location details may differ from the screen capture above. You will want to adjust your dialog to what you see.</p>
+</div>
 <p><img alt="" src="../_attachments/LocationOverview.png" /></p>
 <p>Sample dialog: Here we see the details and status of our Satellite Location. Notice we have 6 hosts at this Location, and they are all currently in the "assigned" state. Typically, when a Satellite Location is first provisioned, you will see 3 hosts assigned and the others in the unassigned state. The first 3 hosts are used for the IBM Cloud Satellite control plane. Additional hosts are used to deploy IBM Cloud Services like managed Red Hat OpenShift or IBM Cloud Databases. </p>
 <ol start="9">
 <li>Click <strong>Hosts</strong>. </li>
 </ol>
 <p><img alt="" src="../_attachments/LocationHosts.png" /></p>
-<p><strong>Note: the hosts details page may differ from the screen capture above. You will want to adjust your dialog to what you see.</strong></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The hosts details page may differ from the screen capture above. You will want to adjust your dialog to what you see.</p>
+</div>
 <p>Sample dialog: Here we see the details for each host that has been deployed at our Satellite Location. Notice the <strong>Status</strong> and <strong>Availability</strong> fields. Sort the table by clicking the <strong>Cluster</strong> menu item in the table header. In this Location, we see that we have our 3 Control plane hosts and the other 3 are used by a Red Hat OpenShift cluster.</p>
 <ol start="10">
 <li>Click the <strong>Attach host</strong> button.</li>
