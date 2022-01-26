@@ -140,6 +140,10 @@ USER_NAMESPACE=${USER_NAMESPACE,,}
 # echo $USERID $IBMUSERID $USER_NAMESPACE
 
 remove_sat_resources
+# it takes a little bit for the configurations and subscriptions to be deleted 
+# if we don't wait, the user can't be deleted
+echo "Waiting for configurations to be removed"
+sleep 30
 remove_user
 
 
