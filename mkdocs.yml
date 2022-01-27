@@ -75,6 +75,8 @@ markdown_extensions:
 
 extra:
   aws:
+    location: aws-us-east-2
+    host_ip: ip-10-0-1-114
     cluster_name: aws_os_cluster
     ingress: aws-os-cluster-222b3514854c2221251113b2b051506c-0000.upi.containers.appdomain.cloud
   ibm:
