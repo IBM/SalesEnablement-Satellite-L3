@@ -708,16 +708,17 @@ OK</p>
 <p class="admonition-title">Important</p>
 <p>In this demonstration environment, you do <strong>not</strong> have permissions to add, remove or change Locations or Hosts.</p>
 </div>
+<div class="admonition info inline endpoint">
+<p class="admonition-title">Info</p>
+<p>curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" -q
+mkdir awsinstall
+mkdir bin
+./aws/install -i awsinstall -b bin
+aws configure</p>
+</div>
 <details class="note">
 <summary>Extra Credit</summary>
 <p>Did you know you can install the AWS command line utilities in your IBM Cloud Shell instance? It doesn't stay persistent, but it only takes a few seconds to install and configure. IBM Cloud Satellite clients may find this useful in managing their hybrid cloud environment.</p>
-<p>curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" -q
-   unzip -qq awscliv2.zip
-   mkdir awsinstall
-   mkdir bin
-   ./aws/install -i awsinstall -b being</p>
-<p>Once the install completes, run</p>
-<p>aws configure</p>
 <p>For this demonstration, we do not provide the credentials to complete the configuration.</p>
 </details>
 
