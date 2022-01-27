@@ -74,6 +74,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 extra:
+  account: "2435442 - ITZ - Satellite"
   aws:
     location: aws-us-east-2
     host_ip: ip-10-0-1-114
