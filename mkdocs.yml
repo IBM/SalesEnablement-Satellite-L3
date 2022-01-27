@@ -2,7 +2,7 @@
 site_name: IBM Cloud Satellite L3 Demonstration
 site_description: IBM Cloud Satellite Sales Enablement Level 3 Demonstration
 site_author: Andrew R. Jones (andrewj@us.ibm.com)
-copyright: Copyright &copy; 2022 IBM 
+copyright: Copyright &copy; 2022 IBM
 
 # Repository
 repo_name: IBM/SalesEnablement-Satellite-L3
@@ -24,7 +24,7 @@ nav:
     - 'Using the IBM Cloud command line interfaces (CLIs)': 'environment/04.01 Using the IBM Cloud command line interfaces (CLIs).md'
     - 'Next steps': 'environment/05.01 Next steps.md'
 
-  - Deploy an OpenShift application: 
+  - Deploy an OpenShift application:
     - 'Introduction': 'deploy-application/01.01 Introduction.md'
     - 'The Food Delivery Application': 'deploy-application/01.02 The Food Delivery Application.md'
     - 'Demonstration flow': 'deploy-application/01.03 Demonstration flow.md'
@@ -38,19 +38,19 @@ nav:
     - 'Perform a rollback': 'deploy-application/04.02 Perform a rollback.md'
     - 'Next steps': 'deploy-application/05.01 Next steps.md'
 
-theme: 
+theme:
   name: material
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.top
   palette:
-    - media: "(prefers-color-scheme: light)" 
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" 
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/toggle-switch
@@ -62,4 +62,8 @@ markdown_extensions:
   - sane_lists
   - pymdownx.details
   - admonition
-
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

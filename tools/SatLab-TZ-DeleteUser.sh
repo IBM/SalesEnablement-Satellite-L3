@@ -92,7 +92,7 @@ function remove_sat_resources() {
 	####
 	#
 	# remove Sat configuration
-	# 
+	#
 	####
 
 	echo Remove ${USER_NAMESPACE} satellite configuration
@@ -159,7 +159,7 @@ remove_user
 
 
 
-echo done
+exit 0
 
 # remove user from access group
 #ibmcloud iam access-group-user-remove GROUP_NAME USER_NAME
