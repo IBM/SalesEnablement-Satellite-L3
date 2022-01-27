@@ -623,7 +623,11 @@ aws-us-east-2   c7o2a02w03bj8394o9ng   normal   yes     1 day ago   12 / 12     
 <ol start="3">
 <li>Get the details for a specific IBM Cloud Satellite Location.</li>
 </ol>
-<pre><code>ibmcloud sat location get --location ##SATELLITE.location##
+<details class="tip">
+<summary>Tip</summary>
+<p>You may need to modify the command line below to specify the actual name of the Location based upon the output of the previous command.</p>
+</details>
+<pre><code>ibmcloud sat location get --location aws-us-east-2
 </code></pre>
 <details class="example">
 <summary>Example output</summary>
@@ -648,7 +652,11 @@ Konnectivity Server Port:       -   </p>
 <ol start="4">
 <li>Get a list of the hosts associated with a specific IBM Cloud Satellite Location.</li>
 </ol>
-<pre><code> ibmcloud sat hosts --location ##SATELLITE.location##
+<details class="tip">
+<summary>Tip</summary>
+<p>You may need to modify the command line below to specify the actual name of the Location based upon the output of the previous command.</p>
+</details>
+<pre><code> ibmcloud sat hosts --location aws-us-east-2
 </code></pre>
 <details class="example">
 <summary>Example output</summary>
@@ -677,9 +685,10 @@ ip-10-0-3-63    4a856f18f177ffc014eb   assigned   Ready    us-east-2c   aws-os-c
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Replace the string <strong>HOSTNAME</strong> with the name of one of the hosts (for example "ip-10-0-1-17") from the previous command.</p>
+<p>You may need to replace the string <strong>ip-10-0-1-114</strong> with the name of one of the hosts from the previous command.
+You may need to modify the command line below to specify the actual name of the Location based upon the output of the previous command.</p>
 </div>
-<pre><code class="language-copycommand">ibmcloud sat host get --location ##SATELLITE.location## --host HOSTNAME
+<pre><code class="language-copycommand">ibmcloud sat host get --location aws-us-east-2 --host ip-10-0-1-114
 </code></pre>
 <details class="example">
 <summary>Example output</summary>
