@@ -16,8 +16,17 @@
 #
 ####
 
+####
+#
+# errorOut
+#
+####
+function errorOut() {
+	echo "Failure: $1"
+	exit 1
+}
 
-##### 
+#####
 #
 # remove_user()
 # Remove user from the account
@@ -25,17 +34,17 @@
 ####
 function remove_user() {
 
-	##### 
+	#####
 	#
 	# remove user and set access-group
 	# assuming TechZone will do the user invite/add so commented out next line
 	#
 	####
-	
+
 	# ibmcloud account user-remove USER_ID [-c, --account-id ACCOUNT_ID] [-f, --force] [-q, --quiet]
-	
-	echo Remove ${USERID} 
-	ibmcloud account user-remove ${USERID} -f
+
+	echo Remove ${USERID}
+	ibmcloud account user-remove ${USERID} -f  || errorOut "failed removing user: {$USERID}"
 
 }
 
@@ -58,37 +67,39 @@ function remove_sat_resources() {
 	# remove Namespace Subscription
 	#
 	###
-	
+
 	echo remove sat subscriptions for all clusters
-	
-	ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f
-	
-	
+
+	ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f || errorOut "failed removing satellite subscriptions for: {$USER_NAMESPACE}"
+
+
 	##
-	## Do we need to sleep for some time til the clusters are 
+	## Do we need to sleep for some time til the clusters are
 	## actually updated (namespaces/projects deleted?
 	##
-	
+
 	###
 	#
 	# remove Namespace version
 	#
 	###
-	
-	
-	echo remove sat config version 
-	ibmcloud sat config version rm --config ${USER_NAMESPACE} --version ${USER_NAMESPACE} -f
-		
+
+
+	echo remove sat config version
+	ibmcloud sat config version rm --config ${USER_NAMESPACE} --version ${USER_NAMESPACE} -f || errorOut "failed removing satellite config version for: {$USER_NAMESPACE}"
+
+
 	####
 	#
 	# remove Sat configuration
 	# 
 	####
-	
+
 	echo Remove ${USER_NAMESPACE} satellite configuration
-	
-	ibmcloud sat config rm --config ${USER_NAMESPACE} -f
-	
+
+	ibmcloud sat config rm --config ${USER_NAMESPACE} -f || errorOut "failed removing satellite configuration for: {$USER_NAMESPACE}"
+
+
 
 }
 
@@ -117,9 +128,9 @@ export IBMUSERID=$2
 #
 # using jq to parse json and get ibmUniqueID
 #
-# Note, the following doesn't need to be performed as the IBMUSER_ID (ibmUniqueId) 
-# will be passed in by the TechZone reservation system 
-# 
+# Note, the following doesn't need to be performed as the IBMUSER_ID (ibmUniqueId)
+# will be passed in by the TechZone reservation system
+#
 # doesn't work here unless user has already accepted invitation to the Cloud account
 #
 ####
@@ -140,7 +151,7 @@ USER_NAMESPACE=${USER_NAMESPACE,,}
 # echo $USERID $IBMUSERID $USER_NAMESPACE
 
 remove_sat_resources
-# it takes a little bit for the configurations and subscriptions to be deleted 
+# it takes a little bit for the configurations and subscriptions to be deleted
 # if we don't wait, the user can't be deleted
 echo "Waiting for configurations to be removed"
 sleep 30
