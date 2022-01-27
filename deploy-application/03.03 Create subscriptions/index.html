@@ -596,7 +596,7 @@
 
   <h1>Create subscriptions</h1>
 
-<p>Now that the Configuration and Versions have been created, the next step is to create <strong>Subscriptions</strong> for the Food Delivery application. In total, six <strong>Subscriptions</strong> will be created:</p>
+<p>Now that the Configuration and Versions have been created, the next step is to create <strong>subscriptions</strong> for the Food Delivery application. In total, six <strong>subscriptions</strong> will be created:</p>
 <table>
 <thead>
 <tr>
@@ -638,13 +638,13 @@
 </tr>
 </tbody>
 </table>
-<p>These <strong>Subscriptions</strong> will use the <strong>Versions</strong> you created to deploy the code to the selected OpenShift clusters. </p>
+<p>These <strong>subscriptions</strong> will use the <strong>versions</strong> you created to deploy the code to the selected OpenShift clusters.</p>
 <ol>
 <li>
 <p>If you closed the IBM Cloud portal after the previous step, open  the IBM Cloud portal to the Satellite Configurations page: <a href="https://cloud.ibm.com/satellite/configuration" target="_blank">https://cloud.ibm.com/satellite/configuration</a>.</p>
 </li>
 <li>
-<p>Click the <strong>##CONFIGURATION.config##</strong> configuration.</p>
+<p>Click the the configuration based upon your IBMid.</p>
 </li>
 </ol>
 <p><img alt="" src="../_attachments/NewConfigurationCreated4.png" /></p>
@@ -661,7 +661,7 @@
 </ol>
 <p>Use the following values for the <strong>Create a subscription</strong> dialog:</p>
 <p><strong>Subscription name</strong></p>
-<pre><code class="language-clipboard">kafka-mongo-redis-on-all-clusters
+<pre><code>kafka-mongo-redis-on-all-clusters
 </code></pre>
 <p><strong>Version</strong></p>
 <pre><code>kafka-mongo-redis
@@ -673,7 +673,7 @@ food-delivery-development-clusters
 <p><img alt="" src="../_attachments/CreateKafkaSubscirption2.png" /></p>
 <ol start="5">
 <li>
-<p>Click <strong>Create</strong> for the <strong>kafka-mongo-redis-on-all-clusters</strong> Subscription.</p>
+<p>Click <strong>Create</strong> for the <strong>kafka-mongo-redis-on-all-clusters</strong> subscription.</p>
 </li>
 <li>
 <p>Verify the <strong>kafka-mongo-redis-on-all-clusters</strong> is created and deployed.</p>
@@ -681,7 +681,7 @@ food-delivery-development-clusters
 </ol>
 <p>Immediately after clicking create, notice the new Subscription appears in the <strong>Subscriptions</strong> table.</p>
 <p><img alt="" src="../_attachments/KafkaSubscriptionCreated.png" /></p>
-<p>Shortly afterwards, if there have been no issues, the <strong>Rollout status</strong> changes from <strong>---</strong> to <strong>2 deployed</strong>. </p>
+<p>Shortly afterwards, if there have been no issues, the <strong>Rollout status</strong> changes from <strong>---</strong> to <strong>2 deployed</strong>.</p>
 <p><img alt="" src="../_attachments/KafkaSubscriptionCreated2.png" /></p>
 <div class="admonition failure">
 <p class="admonition-title">Failure</p>
@@ -692,7 +692,7 @@ food-delivery-development-clusters
 </ol>
 <p><img alt="" src="../_attachments/KafkaSubscriptionDeployedDetails3.png" /></p>
 <ol start="8">
-<li>Click the <strong>##CONFIGURATION.config##</strong> link to return to the configuration page.</li>
+<li>Click your <strong>configuration</strong> link to return to the configuration page.</li>
 </ol>
 <p><img alt="" src="../_attachments/KafkaSubscriptionDeployedDetails4.png" /></p>
 <ol start="9">
@@ -735,15 +735,15 @@ food-delivery-development-clusters
 </tbody>
 </table>
 <p>To avoid typographical errors, use the <img alt="" src="../_attachments/CopyToClipboard.png" /> to copy the values below and paste into the <strong>Subscription name</strong> field.</p>
-<pre><code class="language-clipboard">backend-on-all-clusters
+<pre><code>backend-on-all-clusters
 </code></pre>
-<pre><code class="language-clipboard">frontend-on-dev-clusters
+<pre><code>frontend-on-dev-clusters
 </code></pre>
-<pre><code class="language-clipboard">frontend-on-prod-clusters
+<pre><code>frontend-on-prod-clusters
 </code></pre>
-<pre><code class="language-clipboard">route-dev
+<pre><code>route-dev
 </code></pre>
-<pre><code class="language-clipboard">route-prod
+<pre><code>route-prod
 </code></pre>
 <ol start="10">
 <li>Verify all <strong>Subscriptions</strong> are created and deployed.</li>
