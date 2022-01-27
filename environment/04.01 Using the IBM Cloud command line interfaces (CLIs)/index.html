@@ -603,7 +603,7 @@
 <p>If this is your first time using this demonstration environment, refer to the <a href="../01.03%20Using%20the%20demonstration%20guide/">Using the lab guide</a> chapter for information on the <strong>copy</strong> boxes that are used below.</p>
 </div>
 <ol>
-<li>In the IBM Cloud Portal, with the demonstration account selected (2435442 - ITZ - Satellite), click the IBM Cloud Shell icon.</li>
+<li>In the IBM Cloud Portal, with the demonstration account selected (<strong>2435442 - ITZ - Satellite</strong>), click the IBM Cloud Shell icon.</li>
 </ol>
 <p><img alt="" src="../_attachments/CloudShellMenu2.png" /></p>
 <p>The IBM Cloud Shell will open in a new browser tab or window. It may take a few seconds for the shell to initialize.</p>
@@ -712,24 +712,20 @@ Worker IP:     10.0.1.114 <br />
 Date:          21 hours ago <br />
 OK</p>
 </details>
-<p>All the commands executed above are commands that list or view the details of an IBM Cloud Satellite object. There are also commands to create, remove, and modify these objects. You will perform these types of actions in a later demonstration.</p>
+<p>All the commands executed above are commands that list or view the details of an IBM Cloud Satellite object. There are also commands to create, remove, and modify these objects. You will perform these types of actions in a later demonstration. In this demonstration environment, you do <strong>not</strong> have permissions to add, remove or change Locations or Hosts.</p>
+<div class="admonition info inline end">
+<p class="admonition-title">AWS CLI install steps</p>
+<p>curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" -q</p>
+<p>mkdir awsinstall</p>
+<p>mkdir bin</p>
+<p>./aws/install -i awsinstall -b bin</p>
+<p>aws configure</p>
+</div>
 <div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>In this demonstration environment, you do <strong>not</strong> have permissions to add, remove or change Locations or Hosts.</p>
-</div>
-<div class="admonition info inline endpoint">
-<p class="admonition-title">Info</p>
-<p>curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" -q
-mkdir awsinstall
-mkdir bin
-./aws/install -i awsinstall -b bin
-aws configure</p>
-</div>
-<details class="note">
-<summary>Extra Credit</summary>
+<p class="admonition-title">Extra Credit</p>
 <p>Did you know you can install the AWS command line utilities in your IBM Cloud Shell instance? It doesn't stay persistent, but it only takes a few seconds to install and configure. IBM Cloud Satellite clients may find this useful in managing their hybrid cloud environment.</p>
 <p>For this demonstration, we do not provide the credentials to complete the configuration.</p>
-</details>
+</div>
 
               
             </article>
