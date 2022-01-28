@@ -13,7 +13,7 @@ docs_dir: docs
 
 nav:
   - Home: README.md
-  - IBM Cloud Satellite Overview:
+  - IBM Cloud Satellite overview:
     - 'Introduction': 'environment/01.01 Introduction.md'
     - 'Prerequisites': 'environment/01.02 Prerequisites.md'
     - 'Using the demonstration guide': 'environment/01.03 Using the demonstration guide.md'
