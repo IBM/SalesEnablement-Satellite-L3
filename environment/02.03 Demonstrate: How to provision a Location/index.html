@@ -228,14 +228,14 @@
       
       
         <label class="md-nav__link" for="__nav_2">
-          IBM Cloud Satellite Overview
+          IBM Cloud Satellite overview
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="IBM Cloud Satellite Overview" data-md-level="1">
+      <nav class="md-nav" aria-label="IBM Cloud Satellite overview" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          IBM Cloud Satellite Overview
+          IBM Cloud Satellite overview
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -602,14 +602,23 @@
 <li>Play the video in the previous chapter to the client. It includes both narration and annotations.  </li>
 <li>Use the raw video (below) from the previous chapter and provide your own narration to the video. You will want to pause the video at appropriate locations based upon your narration and any questions your client may have.</li>
 </ol>
-<p><strong>Note:</strong> This video has no sound and is intended to be played while you narrate. Also, the IBM Cloud portal and even the IB Cloud Satellite product changes regularly. You may notice some differences between the video and the actual user interface and experience you see today.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This video has no sound and is intended to be played while you narrate. Also, the IBM Cloud portal and the IB Cloud Satellite product changes regularly. You may notice some differences between the video and the actual user interface and experience you see today.</p>
+</div>
 <iframe src="https://video.ibm.com/embed/recorded/131143792?autoplay=false&html5ui=0" style="border: 0;" webkitallowfullscreen allowfullscreen frameborder="0" width="720" height="405" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-<p><strong>Note:</strong> If the video appears blurry, click the HD button at bottom right and select "1080p @ 390kbps HD". To view the video in full screen in Firefox, hover in the video player and click the <img alt="" src="../_attachments/FullScreenVideo.png" /> icon. To view the video in full screen in Safari, click the <img alt="" src="../_attachments/FullScreenVideo2.png" /> icon.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the video appears blurry, click the HD button at bottom right and select "1080p @ 390kbps HD". It may take a few seconds for the video quality to improve.</p>
+</div>
 <ol start="3">
-<li>Alternatively, you could also do this demonstration using the IBM Cloud portal up to the point of clicking the "Create location" button. You can then switch to the location view of an already provisioned location and describe what took place during the provisioning process. This "baking show" approach shows all the steps but avoids the delays that would be required to perform actual provisioning and deployment of resources.</li>
+<li>Alternatively, you could also do this demonstration using the IBM Cloud portal up to the point of clicking the "Create location" button. Then switch to the location view of an already provisioned location and describe what took place during the provisioning process. This "baking show" approach shows all the steps, but avoids the delays that would be required to perform the provisioning of resources.</li>
 </ol>
-<p><strong>Note:</strong> you will not have the AWS credentials to input in the portal to provision an AWS Location. For this type of demo, you can use the "On-premises &amp; edge" location template instead of the AWS template and describe the differences based upon what you saw in the provisioning video.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In this environment, you will not have the AWS credentials to input in the portal to provision an AWS Location. For this type of demo, you can use the "On-premises &amp; edge" location template instead of the AWS template and describe the differences based on what you saw in the provisioning video.</p>
+</div>
 <p>The steps below can be used as a guide for this style of demonstration:</p>
 <p><strong>Access the IBM Cloud Satellite overview page in the IBM Cloud portal</strong></p>
 <ol>
@@ -619,9 +628,11 @@
 <ol start="2">
 <li>Change from your IBM Cloud account to the demonstration IBM Cloud account: <strong>2435442 - ITZ - Satellite</strong>*.</li>
 </ol>
-<p><img alt="" src="../_attachments/ChangeAccounts-a-gif.gif" /></p>
-<p><strong>Note:</strong> If your browser window is narrow, you may see this icon: <img alt="" src="../_attachments/SwitchAccountsIcon.png" /> instead of the current account name as shown in the screen capture above.</p>
-<p><strong>Note:</strong> You may need to refresh the browser page or repeat step 1 after switching accounts to <strong>2435442 - ITZ - Satellite</strong>*.</p>
+<p><img alt="" src="../_attachments/ChangeAccounts-2-a-gif.gif" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your browser window is narrow, you may see this icon: <img alt="" src="../_attachments/SwitchAccountsIcon.png" /> instead of the current account name as shown in the screen capture above.</p>
+</div>
 <ol start="3">
 <li>Click <strong>Create a Satellite Location</strong>.</li>
 </ol>
@@ -648,7 +659,7 @@
 <p><img alt="" src="../_attachments/SatelliteLocations2.png" /></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The actual Satellite Location details may differ from the screen capture above. You will want to adjust your dialog to what you see.</p>
+<p>The actual details may differ from the screen capture above. You will want to adjust your dialog to what you see.</p>
 </div>
 <p><img alt="" src="../_attachments/LocationOverview.png" /></p>
 <p>Sample dialog: Here we see the details and status of our Satellite Location. Notice we have 6 hosts at this Location, and they are all currently in the "assigned" state. Typically, when a Satellite Location is first provisioned, you will see 3 hosts assigned and the others in the unassigned state. The first 3 hosts are used for the IBM Cloud Satellite control plane. Additional hosts are used to deploy IBM Cloud Services like managed Red Hat OpenShift or IBM Cloud Databases.</p>
@@ -656,10 +667,6 @@
 <li>Click <strong>Hosts</strong>.</li>
 </ol>
 <p><img alt="" src="../_attachments/LocationHosts.png" /></p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The hosts details page may differ from the screen capture above. You will want to adjust your dialog to what you see.</p>
-</div>
 <p>Sample dialog: Here we see the details for each host that has been deployed at our Satellite Location. Notice the <strong>Status</strong> and <strong>Availability</strong> fields. Sort the table by clicking the <strong>Cluster</strong> menu item in the table header. In this Location, we see that we have our 3 Control plane hosts and the other 3 are used by a Red Hat OpenShift cluster.</p>
 <ol start="10">
 <li>Click the <strong>Attach host</strong> button.</li>
