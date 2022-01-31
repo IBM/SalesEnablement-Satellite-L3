@@ -600,56 +600,54 @@
 <ol>
 <li>Open the IBM Cloud portal to the Clusters: <a href="https://cloud.ibm.com/satellite/clusters" target="_blank">https://cloud.ibm.com/satellite/clusters</a>.</li>
 </ol>
-<p><img alt="" src="../_attachments/ClustersList.png" /></p>
+<p><img alt="" src="../_attachments/0122-ClustersList.png" /></p>
 <ol start="2">
 <li>Click the <strong>aws-os-cluster</strong> link.</li>
 </ol>
-<p><img alt="" src="../_attachments/ClustersList-AWS.png" /></p>
+<p><img alt="" src="../_attachments/0122-ClustersList-AWS.png" /></p>
 <ol start="3">
 <li>Click the <strong>Manage cluster</strong> button.</li>
 </ol>
-<p><img alt="" src="../_attachments/Cluster-AWS.png" /></p>
+<p><img alt="" src="../_attachments/0122-Cluster-AWS.png" /></p>
 <p>This will open a new browser window or tab to the cluster's overview page in the IBM Cloud portal.</p>
 <ol start="4">
 <li>Click the <strong>OpenShift web console</strong> button.</li>
 </ol>
-<p><img alt="" src="../_attachments/ClusterOverview-AWS.png" /></p>
+<p><img alt="" src="../_attachments/0122-ClusterOverview-AWS.png" /></p>
 <p>This will open a new browser window or tab to the OpenShift web console for the cluster.</p>
 <ol start="5">
-<li>If the <strong>Developer</strong> persona is not already selected, click the <strong>Administrator</strong> pull down menu and select <strong>Developer</strong>.</li>
-</ol>
-<p><img alt="" src="../_attachments/OS-AdminPulldown.png" /></p>
-<ol start="6">
 <li>If not already selected, select the <strong>project</strong> based upon your IBMid from the <strong>Topology</strong> view.</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The image capture below is different than what you will see. Be sure and select the project (namespace) created for you based upon your IBMid.</p>
 </div>
-<p><img alt="" src="../_attachments/OS-SelectProject.png" /></p>
-<ol start="7">
+<p><img alt="" src="../_attachments/0122-OS-SelectProject.png" /></p>
+<ol start="6">
 <li>Verify all the <strong>Deployments</strong> for the Food Delivery application are present.</li>
 </ol>
-<p>The image capture below may differ slightly from what you see. It is important to point out the <strong>Deployments</strong> represented here were created from the <strong>Subscriptions</strong> to the <strong>Versions</strong> you created for the <strong>Configuration</strong>. Notice that some of the <strong>Deployments</strong> have routes added to them. Routes are depicted by the <img alt="" src="../_attachments/routeIcon.png" />.</p>
-<p><img alt="" src="../_attachments/OS-FD-Deployments.png" /></p>
-<ol start="8">
+<p>The image capture below may differ slightly from what you see. It is important to point out the <strong>Deployments</strong> represented here were created from the <strong>Subscriptions</strong> to the <strong>Versions</strong> you created for the <strong>Configuration</strong>. Notice that some of the <strong>Deployments</strong> have routes added to them. Routes are respresented by the <img alt="" src="../_attachments/routeIcon.png" />.</p>
+<p><img alt="" src="../_attachments/0122-OS-FD-Deployments.png" /></p>
+<ol start="7">
 <li>Verify the application frontend is running by clicking the route icon <img alt="" src="../_attachments/routeIcon.png" /> for the <strong>example-food</strong> deployment.</li>
 </ol>
-<p><img alt="" src="../_attachments/OS-FD-Deployments2.png" /></p>
+<p><img alt="" src="../_attachments/0122-OS-FD-DeploymentsRoute.png" /></p>
 <p>A new browser window or tab should be opened to the Food Delivery application frontend.</p>
-<p><img alt="" src="../_attachments/OS-FD-FrontEnd-Application.png" /></p>
-<ol start="9">
+<p><img alt="" src="../_attachments/0122-OS-FD-FrontEnd-Application.png" /></p>
+<ol start="8">
 <li>Explore the Food Delivery application.</li>
 </ol>
-<p><img alt="" src="../_attachments/OS-FD-FrontEnd-Application2.png" /></p>
-<p>Start simulating orders into the system by clicking the <strong>START</strong> button. Notice the orders being received and fulfilled in the graph on lower right of the interface. These values represent orders moving through ordering to fulfillment. You can adjust the rate that orders are processed as well has the rate of kitchen time and delivery services.</p>
+<p><img alt="" src="../_attachments/0122-OS-FD-FrontEnd-Application-2.png" /></p>
+<p>Start simulating orders into the system by clicking the <strong>START</strong> button. Notice the orders being received and fulfilled in the graph on lower right of the interface. These values represent orders moving through ordering to fulfillment. You can adjust the rate that orders are processed as well has the rate of kitchen time and delivery services. Orders should start being fulfilled after a minute or two.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You may experience a delay in the application reporting orders being fulfilled.  This usually occurs when the demonstration environment is experiencing heavy usage. Remember, the demonstration is about the deployment and management of the application, and not the application functionality. If you experience orders only being received and not fulfilled, you can either continue to wait or just continue with the demonstration.</p>
 </div>
-<ol start="10">
+<ol start="9">
 <li>Repeat steps 2 thru 9 for the production environment cluster: <strong>ibmcloud-wdc-os</strong>.</li>
 </ol>
+<p>Use this link to open the IBM Cloud OpenShift clusters page: <a href="https://cloud.ibm.com/kubernetes/clusters?platformType=openshift" target="_blank">https://cloud.ibm.com/kubernetes/clusters?platformType=openshift</a>.</p>
+<p><img alt="" src="../_attachments/0122-AllOpenShiftClusters.png" /></p>
 
               
             </article>

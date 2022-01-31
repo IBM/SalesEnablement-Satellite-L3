@@ -610,7 +610,7 @@
 <p>Click the <strong>configuration</strong> based on your IBMid.</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/NewConfigurationCreated4.png" /></p>
+<p><img alt="" src="../_attachments/0122-ClusterGroupsCreated.png" /></p>
 <ol start="3">
 <li>Click the <strong>Versions</strong> link in left hand menu.</li>
 </ol>
@@ -618,11 +618,11 @@
 <p class="admonition-title">Warning</p>
 <p>Do NOT delete any existing versions or subscriptions! These are used to create the OpenShift namespace you will be using in this demonstration. Deleting them will break your demonstration environment.</p>
 </div>
-<p><img alt="" src="../_attachments/ConfigurationOverview2.png" /></p>
+<p><img alt="" src="../_attachments/0122-ConfigurationOverview.png" /></p>
 <ol start="4">
 <li>Click <strong>Add version +</strong>.</li>
 </ol>
-<p><img alt="" src="../_attachments/VersionsPage2.png" /></p>
+<p><img alt="" src="../_attachments/0122-VersionsAddButton.png" /></p>
 <ol start="5">
 <li>Create a <strong>version</strong> called <strong>kafka-mongo-redis</strong>.</li>
 </ol>
@@ -771,14 +771,16 @@
 <a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9092</span><span class="w"></span>
 <a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kafka</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="" src="../_attachments/kafkaVersionYAML.png" /></p>
+<p><img alt="" src="../_attachments/0122-kafkaVersionYAML-raw.png" /></p>
 <ol start="6">
 <li>Search and replace all instances of <strong>#######abc-ns</strong> with your specific <strong>configuration</strong> name.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <strong>CONTROL+f</strong> or <strong>COMMAND+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>#######abc-ns</strong>.  In the second entry field, enter your specific <strong>#######abc-ns</strong> value based on your IBMid and the name of your <strong>Satellite configuration</strong>. The dialog should update with a <strong>"1 of 6"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <strong>CONTROL+f</strong> or <strong>COMMAND+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>#######abc-ns</strong>.  In the second entry field, enter your specific <code>#######abc-ns</code> value based on your IBMid and the name of your <strong>Satellite configuration</strong> (see animation below). The dialog should update with a <strong>"1 of 6"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p><img alt="" src="../_attachments/0122-kafkaVersionYAML-modify.png" /></p>
 <ol start="7">
 <li>Click <strong>Add</strong>.</li>
 </ol>
+<p><img alt="" src="../_attachments/0122-kafkaVersionYAML-add.png" /></p>
 <details class="failure">
 <summary>Is the <strong>Add</strong> button not enabled?</summary>
 <p>If the <strong>Add</strong> button isn't enabled, there is a problem with your YAML.  YAML is very sensitive to formatting. Make sure you cut &amp; paste the YAML instead of entering it manually.</p>
@@ -1427,7 +1429,7 @@
 <p>Verify the six (6) versions have been created. You should now see a total of 7 versions.</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/allVersions2.png" /></p>
+<p><img alt="" src="../_attachments/0122-allVersions2.png" /></p>
 
               
             </article>

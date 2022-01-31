@@ -647,11 +647,11 @@
 <p>Click the the configuration based upon your IBMid.</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/NewConfigurationCreated4.png" /></p>
+<p><img alt="" src="../_attachments/0122-NewConfigurationCreated.png" /></p>
 <ol start="3">
 <li>Click the <strong>Create subscription +</strong> button on the Overview page under Subscriptions.</li>
 </ol>
-<p><img alt="" src="../_attachments/SubscriptionLink2.png" /></p>
+<p><img alt="" src="../_attachments/0122-ConfgOverview-CreateSubscription.png" /></p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Do NOT delete any existing subscriptions! These are used to create the OpenShift namespace you will be using in this demonstration. Deleting them will break the demonstration.</p>
@@ -670,7 +670,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>food-delivery-production-clusters
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>food-delivery-development-clusters
 </code></pre></div></p>
-<p><img alt="" src="../_attachments/CreateKafkaSubscirption2.png" /></p>
+<p><img alt="" src="../_attachments/0122-CreateKafkaSubscription.png" /></p>
 <ol start="5">
 <li>
 <p>Click <strong>Create</strong> for the <strong>kafka-mongo-redis-on-all-clusters</strong> subscription.</p>
@@ -679,10 +679,9 @@
 <p>Verify the <strong>kafka-mongo-redis-on-all-clusters</strong> is created and deployed.</p>
 </li>
 </ol>
-<p>Immediately after clicking create, notice the new Subscription appears in the <strong>Subscriptions</strong> table.</p>
-<p><img alt="" src="../_attachments/KafkaSubscriptionCreated.png" /></p>
-<p>Shortly afterwards, if there have been no issues, the <strong>Rollout status</strong> changes from <strong>---</strong> to <strong>2 deployed</strong>.</p>
-<p><img alt="" src="../_attachments/KafkaSubscriptionCreated2.png" /></p>
+<p>Immediately after clicking create, notice the new Subscription appears in the <strong>Subscriptions</strong> table.
+Initially, the <strong>Rollout status</strong> shows <strong>---</strong>. After a few seconds, this should change to <strong>2 deployed</strong>.</p>
+<p><img alt="" src="../_attachments/0122-KafkaSubscriptionCreated.png" /></p>
 <div class="admonition failure">
 <p class="admonition-title">Failure</p>
 <p>If the status doesn't update automatically, click the page refresh button of your browser.</p>
@@ -690,11 +689,15 @@
 <ol start="7">
 <li>Click the <strong>kafka-mongo-redis-on-all-clusters</strong> entry in the table and view the Subscription details.</li>
 </ol>
-<p><img alt="" src="../_attachments/KafkaSubscriptionDeployedDetails3.png" /></p>
+<p><img alt="" src="../_attachments/0122-KafkaSubscriptionDeployedDetails.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some circumstances, you may see more than 2 entries in the details section. As long as you have a successful deployment to both aws_os_cluster and ibmcloud-wdc-os, you can continue.  If one or more of the deployments fail, you need to verify the versions created in the previous step are correct. Make sure you successful replace all instances of <strong>#######abc-ns</strong> with your assigned namespace.</p>
+</div>
 <ol start="8">
 <li>Click your <strong>configuration</strong> link to return to the configuration page.</li>
 </ol>
-<p><img alt="" src="../_attachments/KafkaSubscriptionDeployedDetails4.png" /></p>
+<p><img alt="" src="_attachments/KafkaSubscriptionDeployedDetails-return.png" /></p>
 <ol start="9">
 <li>Repeat the above process (steps 3 thru 8) for each of the remaining subscriptions.</li>
 </ol>
@@ -748,7 +751,7 @@
 <ol start="10">
 <li>Verify all <strong>Subscriptions</strong> are created and deployed.</li>
 </ol>
-<p><img alt="" src="../_attachments/AllSubscriptionsDeployed.png" /></p>
+<p><img alt="" src="../_attachments/0122-AllSubscriptionsDeployed.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>In the next step you will access the Red Hat OpenShift portal to further verify the application has been deployed. You will also access the application and make updates to it using the <strong>food-delivery-frontend-v2</strong> version.</p>

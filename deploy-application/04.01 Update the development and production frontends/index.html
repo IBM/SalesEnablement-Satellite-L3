@@ -605,21 +605,22 @@
 <p>Click the <strong>configuration</strong> link based upon your IBMid (#######abc-ns).</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/NewConfigurationCreated2.png" /></p>
+<p><img alt="" src="../_attachments/0122-Confirations4UpdateSubscrition.png" /></p>
 <ol start="3">
 <li>Edit the <strong>frontend-on-dev-clusters</strong> Subscription.</li>
 </ol>
-<p><img alt="" src="../_attachments/EditFrontEndDevSubscription.png" /></p>
+<p><img alt="" src="../_attachments/0122-EditFrontEndDevSubscription.png" /></p>
 <ol start="4">
 <li>Change the <strong>version</strong> for the <strong>subscription </strong>to use the <strong>food-delivery-frontend-v2</strong> and click <strong>Save</strong>.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>food-delivery-frontend-v2
 </code></pre></div>
-<p><img alt="" src="../_attachments/SaveFrontEndDevSubscription.png" /></p>
+<p><img alt="" src="../_attachments/0122-SaveFrontEndDevSubscription.png" /></p>
 <ol start="5">
 <li>Verify the <strong>Rollout status</strong> is updated.</li>
 </ol>
-<p><img alt="" src="../_attachments/FrontEndDevSubUpdateStatus.png" /></p>
+<p><img alt="" src="../_attachments/0122-FrontEndDevSubUpdateStatus.png" /></p>
+<p>The <strong>Last updated</strong> column will have a very recent value.</p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>Remember how to get to this screen? Click the <strong>frontend-on-dev-clusters</strong> link in the Subscriptions table. Verify the <strong>Last updated</strong> field has a recent  value (for example: 0 minutes ago).</p>
@@ -628,7 +629,7 @@
 <li>Verify the new frontend has been deployed to the development environment.</li>
 </ol>
 <p>There are several ways to verify the new frontend has been deployed. The simplest is to refresh the browser page for the application you opened earlier. Remember, you just updated the development environment. You will notice the application is now using a <strong>dark mode</strong> user interface. If you no longer have the application running in your browser, you can access it by repeating step eight in <a href="../03.04%20Verify%20the%20application%20is%20deployed/">03.04 Verify the application is deployed</a>.</p>
-<p><img alt="" src="../_attachments/FoodDeliveryDarkMode.png" /></p>
+<p><img alt="" src="../_attachments/0122-FoodDeliveryDarkMode.png" /></p>
 <p>The capabilities of the application are the same, but the user interface has changed. This was accomplished by using a new <strong>container image</strong> for the application that was specified in the <strong>food-delivery-frontend-v2</strong> version YAML.</p>
 <p>Frontend v1 YAML specification:</p>
 <details class="example">
