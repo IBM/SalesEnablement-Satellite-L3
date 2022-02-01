@@ -74,6 +74,10 @@ markdown_extensions:
   - pymdownx.superfences
 
 extra:
+  tz_environment:
+    name: "IBM Cloud Satellite - Sales Enablment L3"
+    url: "https://techzone.ibm.com/my/reservations"
+    uuid_label: "Demo-UUID"
   account: "2435442 - ITZ - Satellite"
   aws:
     location: aws-us-east-2
