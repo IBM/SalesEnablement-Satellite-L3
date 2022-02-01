@@ -597,19 +597,24 @@
   <h1>Create a configuration</h1>
 
 <p><strong>Configurations</strong> allow you to upload or create Kubernetes resource YAML file <strong>versions</strong> that you want to deploy to one or more Red Hat OpenShift clusters. Once you create <strong>versions</strong>, the Kubernetes resources can be deployed by adding a <strong>subscription</strong> to your <strong>configuration</strong>. The <strong>subscription</strong> specifies the <strong>version</strong> to be deployed and the target <strong>cluster group(s)</strong>.</p>
-<p>In this demonstration environment, a <strong>configuration</strong> has already been created for you.</p>
 <ol>
+<li>Find the unique identifier for your demonstration environment.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Important</p>
+<p>In this demonstration environment, a nIBM Cloud Satellite <strong>configuration</strong> and Red Hat OpenShift project (also known as a namespace) have already been created for you using a unique identifier based upon your IBM identification (IBMid). Follow the following steps to find the unique identifier. You will need this value throughout this demonstration. We will refer to this value as <strong>Demo-UUID</strong> throughout this guide.</p>
+<p>a. Open the details card for the IBM Cloud Satellite - Sales Enablment L3 IBM Technology Zone reservation: <a href="https://techzone.ibm.com/my/reservations" target="_blank">https://techzone.ibm.com/my/reservations</a>.</p>
+<p>b. Find and record the <strong>Namespace</strong> value in the <strong>Environment</strong> section of the details page. This is your <strong>Demo-UUID</strong>.</p>
+<p><img alt="" src="_attachments/TechZoneFindNamepace.gif.png" /></p>
+</div>
+<ol start="2">
 <li>
 <p>If you closed the IBM Cloud portal after the previous step, open the IBM Cloud portal to the Satellite Clusters page: <a href="https://cloud.ibm.com/satellite/configuration" target="_blank">https://cloud.ibm.com/satellite/configuration</a></p>
 </li>
 <li>
-<p>Verify your <strong>Configuration</strong> is created.</p>
+<p>Find the <strong>configuration</strong> with the name of your <strong>Demo-UUID</strong>.</p>
 </li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">Important</p>
-<p>The image below will show a different configuration name.  Find your <strong>configuration</strong> based upon your IBMid (<strong>#######abc-ns</strong>). You can find the configuration name in the environment section of the details page for your IBM Technology Zone reservation.</p>
-</div>
 <p><img alt="" src="../_attachments/0122-NewConfigurationCreated.png" /></p>
 
               
