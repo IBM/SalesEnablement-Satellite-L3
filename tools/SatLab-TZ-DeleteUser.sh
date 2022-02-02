@@ -68,10 +68,14 @@ function remove_sat_resources() {
 	#
 	###
 
-	echo remove sat subscriptions for all clusters
-
-	ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f || errorOut "failed removing satellite subscriptions for: {$USER_NAMESPACE}"
-
+	echo remove all sat subscriptions in this configuration
+	# must remove  based upon subscription UUID as their can be multiple subscriptions with same name!
+	ibmcloud sat config get --config ${USER_NAMESPACE} --output json | jq -r '.subscriptions[].uuid' | while read subUUID
+	do
+		echo removing subscription: ${subUUID}
+		# ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f || errorOut "failed removing satellite subscriptions for: {$USER_NAMESPACE}"
+		 ibmcloud sat subscription rm --subscription ${subUUID} -f
+  done
 
 	##
 	## Do we need to sleep for some time til the clusters are
@@ -85,9 +89,13 @@ function remove_sat_resources() {
 	###
 
 
-	echo remove sat config version
-	ibmcloud sat config version rm --config ${USER_NAMESPACE} --version ${USER_NAMESPACE} -f || errorOut "failed removing satellite config version for: {$USER_NAMESPACE}"
-
+	echo remove all versions in this configurations
+	#ibmcloud sat config version rm --config ${USER_NAMESPACE} --version ${USER_NAMESPACE} -f || errorOut "failed removing satellite config version for: {$USER_NAMESPACE}"
+	ibmcloud sat config get --config ${USER_NAMESPACE} --output json | jq -r '.versions[].uuid' | while read verUUID
+	do
+		echo removing version: ${verUUID}
+		ibmcloud sat config version rm --config ${USER_NAMESPACE} --version ${verUUID} -f
+  done
 
 	####
 	#
@@ -97,7 +105,7 @@ function remove_sat_resources() {
 
 	echo Remove ${USER_NAMESPACE} satellite configuration
 
-	ibmcloud sat config rm --config ${USER_NAMESPACE} -f || errorOut "failed removing satellite configuration for: {$USER_NAMESPACE}"
+	ibmcloud sat config rm --config ${USER_NAMESPACE} -f # || errorOut "failed removing satellite configuration for: {$USER_NAMESPACE}"
 
 
 
@@ -155,7 +163,7 @@ remove_sat_resources
 # if we don't wait, the user can't be deleted
 echo "Waiting for configurations to be removed"
 sleep 30
-remove_user
+# remove_user
 
 
 
