@@ -74,6 +74,9 @@ markdown_extensions:
   - pymdownx.superfences
 
 extra:
+  learningplan:
+    name: "IBM Cloud Satellite Sales Level 3"
+    url: "https://yourlearning/"
   tz_environment:
     name: "IBM Cloud Satellite - Sales Enablment L3"
     url: "https://techzone.ibm.com/my/reservations"
