@@ -70,12 +70,24 @@ function remove_sat_resources() {
 
 	echo remove all sat subscriptions in this configuration
 	# must remove  based upon subscription UUID as their can be multiple subscriptions with same name!
-	ibmcloud sat config get --config ${USER_NAMESPACE} --output json | jq -r '.subscriptions[].uuid' | while read subUUID
+#	ibmcloud sat config get --config ${USER_NAMESPACE} --output json | jq -r '.subscriptions[].uuid' | while read subUUID
+	ibmcloud sat config get --config ${USER_NAMESPACE} --output json | jq -r '.subscriptions[]|"\(.uuid) \(.name)"'   | while read subUUID subNAME
 	do
-		echo removing subscription: ${subUUID}
-		# ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f || errorOut "failed removing satellite subscriptions for: {$USER_NAMESPACE}"
-		 ibmcloud sat subscription rm --subscription ${subUUID} -f
+		echo uuid = $subUUID name = $subNAME
+		# don't remove the namespace subscription until we get rid of everything in that openshift namespace first
+		if [[ "${subNAME}" == "${USER_NAMESPACE}-sub" ]]
+		then
+			echo skip ${USER_NAMESPACE}-sub
+		else
+                	echo removing subscription: ${subUUID}
+		        # ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f || errorOut "failed removing satellite subscriptions for: {$USER_NAMESPACE}"
+		        ibmcloud sat subscription rm --subscription ${subUUID} -f
+		fi
   done
+
+    echo removing ${USER_NAMESPACE}-sub
+    ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f
+
 
 	##
 	## Do we need to sleep for some time til the clusters are
@@ -155,6 +167,7 @@ export IBMUSERID=$2
 ####
 USER_NAMESPACE=`echo ${IBMUSERID} | cut -d '-' -f 2`"-ns"
 USER_NAMESPACE=${USER_NAMESPACE,,}
+
 
 # echo $USERID $IBMUSERID $USER_NAMESPACE
 
