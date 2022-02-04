@@ -25,6 +25,9 @@ nav:
     - 'Next steps': 'environment/05.01 Next steps.md'
   - Part 2 - Deploy an IBM Cloud Satellite enabled service:
     - 'Introduction': 'deploy-sat-enabled-services/01.01 Introduction.md'
+    - 'Explore Satellite enabled services': 'deploy-sat-enabled-services/02.01 ExploreSatServices.md'
+    - 'Watch: Deploy Red Hat OpenShift on IBM Cloud': 'deploy-sat-enabled-services/03.01 Watch: Deploy ROKS to Sat.md'
+    - 'Explore teh Satellite enabled services': 'deploy-sat-enabled-services/04.01 Demonstrate: Provision ROKS to Sat.md'
   - Part 3 - Deploy an OpenShift application:
     - 'Introduction': 'deploy-application/01.01 Introduction.md'
     - 'The Food Delivery Application': 'deploy-application/01.02 The Food Delivery Application.md'
