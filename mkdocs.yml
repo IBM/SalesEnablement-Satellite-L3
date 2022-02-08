@@ -63,6 +63,7 @@ theme:
 plugins:
     - search
     - macros
+    - mkdocs-video
 
 extra:
   generator: false
