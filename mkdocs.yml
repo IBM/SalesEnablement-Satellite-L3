@@ -90,7 +90,9 @@ extra:
     location: aws-us-east-2
     host_ip: ip-10-0-1-114
     cluster_name: aws_os_cluster
+    cluster_id: c7o5jt8w0o6g5fkl3rp0
     ingress: aws-os-cluster-222b3514854c2221251113b2b051506c-0000.upi.containers.appdomain.cloud
   ibm:
     cluster_name: ibmcloud-wdc-os
+    cluster_id: c7o68suw0jvhnc82ukg0
     ingress: ibmcloud-wdc-os-222b3514854c2221251113b2b051506c-0000.us-east.containers.appdomain.cloud
