@@ -16,6 +16,8 @@ export AWSREGION="us-east-2"
 export AWS_INSTALL="$HOME/awsinstall"        # directory for binary
 export BIN="$HOME/bin"
 export AWS_DESCRIBE_INSTANCES="$HOME/awsInstances.txt"
+export IBMUniqueID=""
+export USER_NAMESPACE=""
 
 #---------------------------------------------------------------------------------------------
 # get user information
@@ -24,9 +26,21 @@ export AWS_DESCRIBE_INSTANCES="$HOME/awsInstances.txt"
 
 
 getUserInfo() {
-#	rm $AWS_DESCRIBE_INSTANCES || echo "Unable to remove temporary file: $AWS_DESCRIBE_INSTANCES"
-}
-ic account user-preference  --output JSON
+IBMUniqueID=`ic account user-preference  --output JSON | jq -r .ibmUniqueId`
+echo ibmUniqueID = $IBMUniqueId
+echo ibmUniqueID = $IBMUniqueId
+
+####
+#
+# Set namespace variable
+# useing unique IBMid less the "IBMid-" prefix and adding "-ns"
+# convert to all lower case as namespaces in OpenShift must be lower case
+#
+####
+USER_NAMESPACE=`echo ${IBMUniqueId} | cut -d '-' -f 2`"-ns"`
+USER_NAMESPACE=${USER_NAMESPACE,,}
+echo USER_NAMESPACE=${USER_NAMESPACE}
+
 #{
 #    "userId": "andrew@jones-tx.com",
 #    "firstname": "Andrew",
@@ -122,6 +136,10 @@ yesno() {
 # add versions to config space
 # add subscriptions to config space with specific versions
 
+getUserInfo
+
+echo in Main
+echo USER_NAMESPACE=${USER_NAMESPACE}
 
 echo
 # cleanup
