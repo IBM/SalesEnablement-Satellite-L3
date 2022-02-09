@@ -177,13 +177,19 @@ AWS_INGRESS=${AWS_INGRESS##*( )}
 
 cleanup() {
 
-rm ${MKDOCS}
-for yamlBaseName in ${VERSIONS[@]}
-do
-#	echo YamlBaseName=${yamlBaseName}
-	rm ${yamlBaseName}.yaml
-	rm ${yamlBaseName}.yaml.orig
-done
+  if [ -f ${MKDOCS} ]; then
+		rm ${MKDOCS}
+	fi
+	for yamlBaseName in ${VERSIONS[@]}
+	do
+	#	echo YamlBaseName=${yamlBaseName}
+	  if [ -f ${yamlBaseName}.yaml ]; then
+			rm ${yamlBaseName}.yaml
+	  fi
+		if [ -f ${yamlBaseName}yaml.orig ]; then
+  		rm ${yamlBaseName}.yaml.orig
+    fi
+	done
 #	rm $AWS_DESCRIBE_INSTANCES || echo "Unable to remove temporary file: $AWS_DESCRIBE_INSTANCES"
 }
 
