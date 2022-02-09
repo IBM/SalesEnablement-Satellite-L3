@@ -18,6 +18,10 @@ export BIN="$HOME/bin"
 export AWS_DESCRIBE_INSTANCES="$HOME/awsInstances.txt"
 export IBMUniqueID=""
 export USER_NAMESPACE=""
+export VERSIONS=("kafka-mongo-redis" "food-delivery-backend" "food-delivery-frontend-v1" "food-delivery-frontend-v2" "development-route" "production-route")
+export SUBSCRIPTIONS=("kafka-mongo-redis-on-all-clusters" "backend-on-all-clusters" "frontend-on-dev-clusters" "frontend-on-prod-clusters" "route-dev" "route-prod")
+export PROD_CLUSTER_GROUP="food-delivery-production-clusters"
+export DEV_CLUSTER_GROUP="food-delivery-development-clusters"
 
 #---------------------------------------------------------------------------------------------
 # get user information
@@ -42,6 +46,19 @@ echo ibmUniqueID = $IBMUniqueID
 USER_NAMESPACE=`echo ${IBMUniqueID} | cut -d '-' -f 2`"-ns"
 USER_NAMESPACE=${USER_NAMESPACE,,}
 echo USER_NAMESPACE=${USER_NAMESPACE}
+}
+
+getAllYAMLFiles() {
+
+# |**Subscription name**              | **Version**               | **Cluster group(s)**               |
+#|-----------------------------------|---------------------------|------------------------------------|
+#| kafka-mongo-redis-on-all-clusters | kafka-mongo-redis         | food-delivery-production-clusters<br>food-delivery-development-clusters|
+#| backend-on-all-clusters           | food-delivery-backend     | food-delivery-production-clusters<br>food-delivery-development-clusters|
+#| frontend-on-dev-clusters          | food-delivery-frontend-v1 | food-delivery-development-clusters |
+#| frontend-on-prod-clusters         | food-delivery-frontend-v2 | food-delivery-production-clusters  |
+#| route-dev                         | development-route         | food-delivery-development-clusters |
+#| route-prod                        | production-route          | food-delivery-production-clusters  |
+
 }
 
 #---------------------------------------------------------------------------------------------
@@ -121,6 +138,9 @@ yesno() {
 
 # find user's IBMID
 # generate namespace and config namespace
+# download all YAML files for versions and mkdocs.yml
+# get key values from mkdocs.yml
+# perform string substitutions for all the yaml files based upon mkdocs values
 # add versions to config space
 # add subscriptions to config space with specific versions
 
