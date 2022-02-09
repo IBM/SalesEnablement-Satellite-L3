@@ -94,6 +94,10 @@ yesno() {
 # install AWS CLI
 # yesno "Do you want to download and install the AWS CLI (y|n)? " && installAWSCLI || echo "Skipping AWS CLI install."
 
+# find user's IBMID
+# generate namespace and config namespace
+# add versions to config space
+# add subscriptions to config space with specific versions
 
 
 echo
