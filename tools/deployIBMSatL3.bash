@@ -25,10 +25,12 @@ export USER_NAMESPACE=""
 #---------------------------------------------------------------------------------------------
 
 
-getUserInfo() {
-IBMUniqueID=`ic account user-preference  --output JSON | jq -r .ibmUniqueId`
-echo ibmUniqueID = $IBMUniqueId
-echo ibmUniqueID = $IBMUniqueId
+getUserNamespace() {
+
+# find the IBMUniqueID
+IBMUniqueID=`ibmcloud account user-preference  --output JSON | jq -r .ibmUniqueId`
+echo ibmUniqueID = $IBMUniqueID
+
 
 ####
 #
@@ -37,24 +39,9 @@ echo ibmUniqueID = $IBMUniqueId
 # convert to all lower case as namespaces in OpenShift must be lower case
 #
 ####
-USER_NAMESPACE=`echo ${IBMUniqueId} | cut -d '-' -f 2`"-ns"`
+USER_NAMESPACE=`echo ${IBMUniqueID} | cut -d '-' -f 2`"-ns"
 USER_NAMESPACE=${USER_NAMESPACE,,}
 echo USER_NAMESPACE=${USER_NAMESPACE}
-
-#{
-#    "userId": "andrew@jones-tx.com",
-#    "firstname": "Andrew",
-#    "lastname": "Jones",
-#    "state": "ACTIVE",
-#    "ibmUniqueId": "2700039NFT",
-#    "iam_id": "IBMid-2700039NFT",
-#    "phonenumber": "512-917-8023",
-#    "email": "andrew@jones-tx.com",
-#    "createdOn": "2017-03-02T20:09:07.646Z",
-#    "position": "",
-#    "notifications": {
-#        "platform": []
-#    }
 }
 
 #---------------------------------------------------------------------------------------------
@@ -64,6 +51,7 @@ echo USER_NAMESPACE=${USER_NAMESPACE}
 
 
 cleanup() {
+echo
 #	rm $AWS_DESCRIBE_INSTANCES || echo "Unable to remove temporary file: $AWS_DESCRIBE_INSTANCES"
 }
 
@@ -136,7 +124,7 @@ yesno() {
 # add versions to config space
 # add subscriptions to config space with specific versions
 
-getUserInfo
+getUserNamespace
 
 echo in Main
 echo USER_NAMESPACE=${USER_NAMESPACE}
