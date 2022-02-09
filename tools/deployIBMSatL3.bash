@@ -22,6 +22,31 @@ export VERSIONS=("kafka-mongo-redis" "food-delivery-backend" "food-delivery-fron
 export SUBSCRIPTIONS=("kafka-mongo-redis-on-all-clusters" "backend-on-all-clusters" "frontend-on-dev-clusters" "frontend-on-prod-clusters" "route-dev" "route-prod")
 export PROD_CLUSTER_GROUP="food-delivery-production-clusters"
 export DEV_CLUSTER_GROUP="food-delivery-development-clusters"
+
+export KMR_sub=(${SUBSCRIPTIONS[0]} ${VERSIONS[0]} "--group ${PROD_CLUSTER_GROUP} --group ${DEV_CLUSTER_GROUP}")
+export FDB_sub=(${SUBSCRIPTIONS[1]} ${VERSIONS[1]} "--group ${PROD_CLUSTER_GROUP} --group ${DEV_CLUSTER_GROUP}")
+export FEDEV_sub=(${SUBSCRIPTIONS[2]} ${VERSIONS[2]} "--group ${DEV_CLUSTER_GROUP}")
+export FEPROD_sub=(${SUBSCRIPTIONS[3]} ${VERSIONS[2]} "--group ${PROD_CLUSTER_GROUP}")
+export RD_sub=(${SUBSCRIPTIONS[4]} ${VERSIONS[4]} "--group ${DEV_CLUSTER_GROUP}")
+export RP_sub=(${SUBSCRIPTIONS[5]} ${VERSIONS[5]} "--group ${PROD_CLUSTER_GROUP}")
+
+export SUBSCRIPTION_DEFINITIONS=(KMR_sub FDB_sub FEDEV_sub FEPROD_sub RD_sub RP_sub)
+
+
+
+
+
+
+# |**Subscription name**              | **Version**               | **Cluster group(s)**               |
+#|-----------------------------------|---------------------------|------------------------------------|
+#| kafka-mongo-redis-on-all-clusters | kafka-mongo-redis         | food-delivery-production-clusters<br>food-delivery-development-clusters|
+#| backend-on-all-clusters           | food-delivery-backend     | food-delivery-production-clusters<br>food-delivery-development-clusters|
+#| frontend-on-dev-clusters          | food-delivery-frontend-v1 | food-delivery-development-clusters |
+#| frontend-on-prod-clusters         | food-delivery-frontend-v2 | food-delivery-production-clusters  |
+#| route-dev                         | development-route         | food-delivery-development-clusters |
+#| route-prod                        | production-route          | food-delivery-production-clusters  |
+
+
 export GITREPO_RAW_URL_BASE="https://raw.githubusercontent.com/IBM/SalesEnablement-Satellite-L3/main"
 export MKDOCS="mkdocs.yml"
 export WGET_OPTIONS="-q --show-progress"
@@ -69,15 +94,6 @@ echo get mkdocs.yml
 
 wget ${WGET_OPTIONS} ${GITREPO_RAW_URL_BASE}/${MKDOCS}
 
-# |**Subscription name**              | **Version**               | **Cluster group(s)**               |
-#|-----------------------------------|---------------------------|------------------------------------|
-#| kafka-mongo-redis-on-all-clusters | kafka-mongo-redis         | food-delivery-production-clusters<br>food-delivery-development-clusters|
-#| backend-on-all-clusters           | food-delivery-backend     | food-delivery-production-clusters<br>food-delivery-development-clusters|
-#| frontend-on-dev-clusters          | food-delivery-frontend-v1 | food-delivery-development-clusters |
-#| frontend-on-prod-clusters         | food-delivery-frontend-v2 | food-delivery-production-clusters  |
-#| route-dev                         | development-route         | food-delivery-development-clusters |
-#| route-prod                        | production-route          | food-delivery-production-clusters  |
-
 }
 
 #---------------------------------------------------------------------------------------------
@@ -111,6 +127,48 @@ createVersions() {
 
 
 }
+
+#---------------------------------------------------------------------------------------------
+# create each of the SUBSCRIPTIONS
+#
+#---------------------------------------------------------------------------------------------
+createSubscriptions() {
+	declare -n elmv1
+	for elmv1 in "${SUBSCRIPTION_DEFINITIONS[@]}"
+	do
+		echo Creating subscription ${elmv1[0]} with version ${elmv1[1]} in ${elmv1[2]}
+		ibmcloud sat subscription create --name ${elmv1[0]} ${elmv1[2]} --config ${configUUID} --version ${elmv1[1]}
+	done
+
+#	  ibmcloud sat subscription create --name ${subName} $bothGroupString --config ${configUUID} --version kafka-mongo-redis$i
+
+}
+
+#---------------------------------------------------------------------------------------------
+# update version files with user config info
+#
+#---------------------------------------------------------------------------------------------
+updateVersionFiles() {
+
+# need to substitute {{ tz_environment.uuid_label }} with USER_NAMESPACE
+# need to substitute {{ ibm.ingress }} with ibm.ingress from mkdocs.yaml
+# need to substitute {{ aws.ingress }} with aws.ingress from mkdocs.yaml
+
+# yq is old in IBM Cloud shell so just using grep to get the ingress values  from MKDOCS
+
+IBM_INGRESS=`grep ingress.*ibm mkdocs.yml | cut -f2 -d':'| sed -e "s/^ *//g"`
+IBM_INGRESS=${IBM_INGRESS##*( )}
+AWS_INGRESS=`grep ingress.*aws mkdocs.yml | cut -f2 -d':'| sed -e "s/^ *//g"`
+AWS_INGRESS=${AWS_INGRESS##*( )}
+
+	for yamlBaseName in ${VERSIONS[@]}
+	do
+		echo "Updating ${yamlBaseName}.yaml"
+		mv ${yamlBaseName}.yaml ${yamlBaseName}.yaml.orig
+	  sed -e "s/{{ tz_environment.uuid_label }}/${USER_NAMESPACE}/g" -e "s/{{ ibm.ingress }}/${IBM_INGRESS}/g" -e "s/{{ aws.ingress }}/${AWS_INGRESS}/g" ${yamlBaseName}.yaml.orig > ${yamlBaseName}.yaml
+	done
+}
+
 #---------------------------------------------------------------------------------------------
 # cleanup temporary files
 #
@@ -124,6 +182,7 @@ for yamlBaseName in ${VERSIONS[@]}
 do
 #	echo YamlBaseName=${yamlBaseName}
 	rm ${yamlBaseName}.yaml
+	rm ${yamlBaseName}.yaml.orig
 done
 #	rm $AWS_DESCRIBE_INSTANCES || echo "Unable to remove temporary file: $AWS_DESCRIBE_INSTANCES"
 }
@@ -210,9 +269,16 @@ yesno "Verify your configuration exists (y|n)? " && verifyConfig || echo "Skippi
 
 # get key values from mkdocs.yml
 # perform string substitutions for all the yaml files based upon mkdocs values
+echo
+yesno "Subsititute all placeholders in YAML files (y|n)? " && updateVersionFiles || echo "Skipping string substituions in YAML files."
+
+
 # add versions to config space
 echo
 yesno "Do you want to create the versions in your configuration (y|n)? " && createVersions || echo "Skipping version creations."
+
+echo
+yesno "Do you want to create the subscriptions in your configuration (y|n)? " && createSubscriptions || echo "Skipping subscription creations."
 
 
 # add subscriptions to config space with specific versions

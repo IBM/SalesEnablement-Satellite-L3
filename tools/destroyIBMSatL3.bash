@@ -99,18 +99,31 @@ echo "${USER_NAMESPACE} configuration exists - UUID = ${configUUID}"
 }
 
 #---------------------------------------------------------------------------------------------
-# create each of the versions
+# delete each of the versions
 #
 #---------------------------------------------------------------------------------------------
 deleteVersions() {
 	for yamlBaseName in ${VERSIONS[@]}
 	do
-		echo Creating version ${yamlBaseName} using ${yamlBaseName}.yaml
+		echo Deleting version ${yamlBaseName}
 		ibmcloud sat config version rm --config ${configUUID} --version ${yamlBaseName}  -f
 	done
-
-
 }
+
+#---------------------------------------------------------------------------------------------
+# delete each of the SUBSCRIPTIONS
+#
+#---------------------------------------------------------------------------------------------
+deleteSubscriptions() {
+	for subName in ${SUBSCRIPTIONS[@]}
+	do
+		echo Deleting subscription ${subName}
+		ibmcloud sat subscription rm --subscription ${subName} -f
+	done
+}
+
+
+
 #---------------------------------------------------------------------------------------------
 # cleanup temporary files
 #
@@ -207,6 +220,10 @@ yesno "Verify your configuration exists? (y|n)? " && verifyConfig || echo "Skipp
 # get key values from mkdocs.yml
 # perform string substitutions for all the yaml files based upon mkdocs values
 # add versions to config space
+echo
+yesno "Do you want to delete the subscriptions in your configuration (y|n)? " && deleteSubscriptions || echo "Skipping subscription deletion."
+# add subscriptions to config space with specific versions
+
 echo
 yesno "Do you want to delete the versions in your configuration (y|n)? " && deleteVersions || echo "Skipping version deletion."
 # add subscriptions to config space with specific versions
