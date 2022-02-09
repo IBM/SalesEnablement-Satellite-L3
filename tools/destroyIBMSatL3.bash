@@ -102,11 +102,11 @@ echo "${USER_NAMESPACE} configuration exists - UUID = ${configUUID}"
 # create each of the versions
 #
 #---------------------------------------------------------------------------------------------
-createVersions() {
+deleteVersions() {
 	for yamlBaseName in ${VERSIONS[@]}
 	do
 		echo Creating version ${yamlBaseName} using ${yamlBaseName}.yaml
-		ibmcloud sat config version create -name ${yamlBaseName} --read-config ${yamlBaseName}.yaml --config ${configUUID} --file-format yaml
+		ibmcloud sat config version rm --config ${configUUID} --version ${yamlBaseName}  -f
 	done
 
 
@@ -200,21 +200,15 @@ yesno() {
 # generate namespace and config namespace
 getUserNamespace
 
-# download all YAML files for versions and mkdocs.yml
-echo
-yesno "Do you want to retrieve all the YAML files from the git repository (${GITREPO_RAW_URL_BASE}) (y|n)? " && getAllYAMLFiles || echo "Skipping download of YAML files."
-
 # verify the users configuration actually exists
 echo
-yesno "Verify your configuration exists (y|n)? " && verifyConfig || echo "Skipping configuration verification."
+yesno "Verify your configuration exists? (y|n)? " && verifyConfig || echo "Skipping configuration verification."
 
 # get key values from mkdocs.yml
 # perform string substitutions for all the yaml files based upon mkdocs values
 # add versions to config space
 echo
-yesno "Do you want to create the versions in your configuration (y|n)? " && createVersions || echo "Skipping version creations."
-
-
+yesno "Do you want to delete the versions in your configuration (y|n)? " && deleteVersions || echo "Skipping version deletion."
 # add subscriptions to config space with specific versions
 
 echo
