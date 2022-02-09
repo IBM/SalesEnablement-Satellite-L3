@@ -62,10 +62,10 @@ theme:
 
 plugins:
     - search
-    - macros
-        include_yaml:
-          - food-deliver-front-end-v2: data/food-deliver-front-end-v2.yaml 
     - mkdocs-video
+    - macros:
+        include_yaml:
+          - food-deliver-front-end-v2: data/food-deliver-front-end-v2.yaml
 
 extra:
   generator: false
