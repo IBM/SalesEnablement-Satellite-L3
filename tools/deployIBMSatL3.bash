@@ -22,6 +22,8 @@ export VERSIONS=("kafka-mongo-redis" "food-delivery-backend" "food-delivery-fron
 export SUBSCRIPTIONS=("kafka-mongo-redis-on-all-clusters" "backend-on-all-clusters" "frontend-on-dev-clusters" "frontend-on-prod-clusters" "route-dev" "route-prod")
 export PROD_CLUSTER_GROUP="food-delivery-production-clusters"
 export DEV_CLUSTER_GROUP="food-delivery-development-clusters"
+export GITREPO_RAW_URL_BASE="https://raw.githubusercontent.com/IBM/SalesEnablement-Satellite-L3/main"
+export MKDOCS="mkdocs.yml"
 
 #---------------------------------------------------------------------------------------------
 # get user information
@@ -48,7 +50,21 @@ USER_NAMESPACE=${USER_NAMESPACE,,}
 echo USER_NAMESPACE=${USER_NAMESPACE}
 }
 
+#---------------------------------------------------------------------------------------------
+# get all the YAML files from git repo
+#
+#---------------------------------------------------------------------------------------------
 getAllYAMLFiles() {
+
+for yamlBaseName in ${VERSIONS}
+do
+	echo YamlBaseName=${yamlBaseName}
+	wget $GITREPO_RAW_URL_BASE/includes/${yamlBaseName}.yaml
+done
+
+echo get mkdocs.yml
+
+wget $GITREPO_RAW_URL_BASE/${MKDOCS}
 
 # |**Subscription name**              | **Version**               | **Cluster group(s)**               |
 #|-----------------------------------|---------------------------|------------------------------------|
@@ -148,6 +164,10 @@ getUserNamespace
 
 echo in Main
 echo USER_NAMESPACE=${USER_NAMESPACE}
+
+getAllYAMLFiles
+
+
 
 echo
 # cleanup
