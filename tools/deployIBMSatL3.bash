@@ -17,8 +17,31 @@ export AWS_INSTALL="$HOME/awsinstall"        # directory for binary
 export BIN="$HOME/bin"
 export AWS_DESCRIBE_INSTANCES="$HOME/awsInstances.txt"
 
+#---------------------------------------------------------------------------------------------
+# get user information
+#
+#---------------------------------------------------------------------------------------------
 
 
+getUserInfo() {
+#	rm $AWS_DESCRIBE_INSTANCES || echo "Unable to remove temporary file: $AWS_DESCRIBE_INSTANCES"
+}
+ic account user-preference  --output JSON
+#{
+#    "userId": "andrew@jones-tx.com",
+#    "firstname": "Andrew",
+#    "lastname": "Jones",
+#    "state": "ACTIVE",
+#    "ibmUniqueId": "2700039NFT",
+#    "iam_id": "IBMid-2700039NFT",
+#    "phonenumber": "512-917-8023",
+#    "email": "andrew@jones-tx.com",
+#    "createdOn": "2017-03-02T20:09:07.646Z",
+#    "position": "",
+#    "notifications": {
+#        "platform": []
+#    }
+}
 
 #---------------------------------------------------------------------------------------------
 # cleanup temporary files
