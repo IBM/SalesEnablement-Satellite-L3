@@ -27,6 +27,7 @@ nav:
     - 'Explore Satellite enabled services': 'deploy-sat-enabled-services/02.01 ExploreSatServices.md'
     - 'Watch: Deploying Red Hat OpenShift to an IBM Cloud Satellite Location': 'deploy-sat-enabled-services/03.01 Watch: Deploy ROKS to Sat.md'
     - 'Demonstrate: How to deploy Red Hat OpenShift to an IBM Cloud Satellite Location': 'deploy-sat-enabled-services/04.01 Demonstrate: Provision ROKS to Sat.md'
+    - 'Next steps': 'deploy-sat-enabled-services/05.01 Next steps.md'
   - Part 3 - Deploy an OpenShift application:
     - 'Introduction': 'deploy-application/01.01 Introduction.md'
     - 'The Food Delivery Application': 'deploy-application/01.02 The Food Delivery Application.md'
