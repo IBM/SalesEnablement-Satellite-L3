@@ -15,7 +15,6 @@ nav:
   - Home: README.md
   - Part 1 - IBM Cloud Satellite overview:
     - 'Introduction': 'environment/01.01 Introduction.md'
-    - 'Prerequisites': 'environment/01.02 Prerequisites.md'
     - 'Using the demonstration guide': 'environment/01.03 Using the demonstration guide.md'
     - 'What are IBM Cloud Satellite Locations': 'environment/02.01 What are Locations.md'
     - 'Watch: How to provision a Location in AWS': 'environment/02.02 Watch: How to provision a Location in AWS.md'
@@ -41,6 +40,11 @@ nav:
     - 'Update the development and production frontends': 'deploy-application/04.01 Update the development and production frontends.md'
     - 'Perform a rollback': 'deploy-application/04.02 Perform a rollback.md'
     - 'Next steps': 'deploy-application/05.01 Next steps.md'
+  - Part 4 - Preparing for a client demonstration:
+    - 'Introduction': 'prepping-for-a-demo/01.01 Introduction.md'
+    - 'The Big Event': 'prepping-for-a-demo/02.02 The Big Event.md'
+    - 'Demonstration setup': 'prepping-for-a-demo/03.01 Setting up for the demo.md'
+    - 'Next steps.md': 'prepping-for-a-demo/04.01 Next steps.md'
 
 theme:
   name: material

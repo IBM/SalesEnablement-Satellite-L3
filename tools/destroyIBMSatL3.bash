@@ -12,6 +12,7 @@ cd $HOME
 
 # some variables we will need
 export origIFS=$IFS
+export TZ_ACCOUNT="b77832f89c084e1d994ec9ae8e1bce0e"
 export AWSREGION="us-east-2"
 export AWS_INSTALL="$HOME/awsinstall"        # directory for binary
 export BIN="$HOME/bin"
@@ -86,16 +87,34 @@ wget ${WGET_OPTIONS} ${GITREPO_RAW_URL_BASE}/${MKDOCS}
 #---------------------------------------------------------------------------------------------
 
 verifyConfig() {
-configJSON=`ibmcloud sat config get --config ${USER_NAMESPACE} --output JSON`
-	if [ $? -ne 0 ]
-	then
-		echo "${USER_NAMESPACE} does not exist!"
-		echo "Aborting operations."
-		exit 1
-	fi
-# get conifgUUID from configJSON
-configUUID=`echo ${configJSON} | jq -r .uuid`
-echo "${USER_NAMESPACE} configuration exists - UUID = ${configUUID}"
+	configJSON=`ibmcloud sat config get --config ${USER_NAMESPACE} --output JSON`
+		if [ $? -ne 0 ]
+		then
+			echo "${USER_NAMESPACE} does not exist!"
+	    echo "Checking you are in the correct TechZone account."
+			ibmcloud account list | grep ${TZ_ACCOUNT}
+			if [ $? -ne 0 ]
+			then
+				echo "You don't appear to have an ID in the TechZone account for this demosntration."
+				echo "Aborting operations."
+			  exit 1
+			else
+				echo "Attempting to switch accounts."
+				ibmcloud target -c ${TZ_ACCOUNT}
+				if [ $? -ne 0 ]
+			  then
+					echo "Unable to switch to TechZone account."
+					echo "Aborting operations."
+					exit 1
+				else
+					# make rescrusive call back to verifyConfig
+				  verifyConfig
+				fi
+			fi
+		fi
+	# get conifgUUID from configJSON
+	configUUID=`echo ${configJSON} | jq -r .uuid`
+	echo "${USER_NAMESPACE} configuration exists - UUID = ${configUUID}"
 }
 
 #---------------------------------------------------------------------------------------------
