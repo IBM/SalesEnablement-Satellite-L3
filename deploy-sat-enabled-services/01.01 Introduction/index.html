@@ -257,20 +257,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/01.02%20Prerequisites/" class="md-nav__link">
-        Prerequisites
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../environment/01.03%20Using%20the%20demonstration%20guide/" class="md-nav__link">
         Using the demonstration guide
       </a>
@@ -671,6 +657,96 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Part 4 - Preparing for a client demonstration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Part 4 - Preparing for a client demonstration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Part 4 - Preparing for a client demonstration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prepping-for-a-demo/01.01%20Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prepping-for-a-demo/02.02 The Big Event.md" class="md-nav__link">
+        The Big Event
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prepping-for-a-demo/03.01 Setting up for the demo.md" class="md-nav__link">
+        Demonstration setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prepping-for-a-demo/04.01%20Next%20steps/" class="md-nav__link">
+        Next steps.md
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -688,6 +764,10 @@
 
 <p>Many IBM Cloud services are enabled for IBM Cloud Satellite including IBM Cloud databases, IBM Event Streams, IBM Key Protect, Red Hat OpenShift on IBM Cloud, and others. In the future, more services will be enabled for IBM Cloud Satellite.</p>
 <p>In this part of the demonstration, you will learn how to find the all the IBM Cloud services that are enabled for Satellite using the IBM Cloud portal.  In addition, you will see how Red Hat OpenShift on IBM Cloud was provisioned in this demonstration environment and how you can demonstrate this process.</p>
+<p>Red Hat OpenShift on IBM Cloud is a fully managed deployment of Red Hat OpenShift that is managed by IBM. In this demonstration environment, the OpenShift cluster has already been deployed to the IBM Cloud Satellite Location running in AWS. In the next chapters, you will learn how this was done and how you can demonstrate this to your client. Note, when originally provisioned, the fully automated process took approximately 45 minutes from start to finish.</p>
+<p>The cluster that was deployed has 9 worker nodes, 3 per availability zone in the Satellite Location. The Satellite Control Plane also acts as the master nodes for this cluster. The logical deployment architecture is depicted below.</p>
+<p><img alt="" src="_attachments/SatelliteDemoSketch-DeploymentArchitectureIncludingROKS.png" /></p>
+<p>Note: the public facing IP addresses for both the additional hosts (aka worker nodes) and the satellite control plane hosts in AWS have been exposed for the purposes of this demonstration. For proof-of-concepts (POCs) or production environments, a best practice would be to use the private IP addresses and Virtual Private Networks (VPNs) to extablish connectivity. You can read more about this in the <a href="https://cloud.ibm.com/docs/satellite?topic=satellite-getting-started" target="_blank">IBM Cloud Satellite documentation</a>.</p>
 
               
             </article>
