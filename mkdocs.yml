@@ -31,7 +31,6 @@ nav:
     - 'Introduction': 'deploy-application/01.01 Introduction.md'
     - 'The Food Delivery Application': 'deploy-application/01.02 The Food Delivery Application.md'
     - 'Demonstration flow': 'deploy-application/01.03 Demonstration flow.md'
-    - 'Watch the demonstration': 'deploy-application/01.04 Watch the demonstration.md'
     - 'View cluster groups': 'deploy-application/02.01 Create cluster groups.md'
     - 'View configuration': 'deploy-application/03.01 Create a configuration.md'
     - 'Create versions': 'deploy-application/03.02 Create versions.md'
@@ -44,7 +43,7 @@ nav:
     - 'Introduction': 'prepping-for-a-demo/01.01 Introduction.md'
     - 'The Big Event': 'prepping-for-a-demo/02.01 The Big Event.md'
     - 'Demonstration setup': 'prepping-for-a-demo/03.01 Setting up for the virtual demo.md'
-    - 'Next steps.md': 'prepping-for-a-demo/04.01 Next steps.md'
+    - 'Next steps': 'prepping-for-a-demo/04.01 Next steps.md'
 
 theme:
   name: material
