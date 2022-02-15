@@ -751,7 +751,7 @@
 <p>Now that the Configuration has been created, the next step is to create <strong>versions</strong> for each part of the Food Delivery application. In this example, the YAML files used will create OpenShift deployments and routes in the namespace that has been created for you in the respective OpenShift clusters. Four <strong>deployment</strong> versions will be created: two for the backend services of the application and two different frontends. These <strong>deployments</strong> will deploy the Kubernetes containers that include the container images and application code. <strong>Versions</strong> will also be created for the development (dev) and production (prod) environments that will define <strong>routes</strong>. Routes are used in OpenShift to define communication paths between the end user and the frontend of the application, as well as from the frontend to the backend, and backend to the various backend datastores.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Don't be intimidated by the length this section.  Most of it is code that you will cut and paste into the IBM Cloud portal.</p>
+<p>Don't be intimidated by the length this section. Most of it is code that you will cut and paste into the IBM Cloud portal.</p>
 </div>
 <ol>
 <li>
@@ -767,7 +767,7 @@
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Notice, one <strong>Version</strong> already exists in your configuration.  This <strong>Version</strong> was used to create the OpenShift project where you will be deploying the application. Do <strong>NOT</strong> delete any existing versions or subscriptions!  Deleting them will break your demonstration environment.</p>
+<p>Notice, one <strong>Version</strong> already exists in your configuration. This <strong>Version</strong> was used to create the OpenShift project where you will be deploying the application. Do <strong>NOT</strong> delete any existing versions or subscriptions! Deleting them will break your demonstration environment.</p>
 </div>
 <p><img alt="" src="../_attachments/0122-ConfigurationOverview.png" /></p>
 <ol start="4">
@@ -930,14 +930,14 @@
 <ol start="6">
 <li>Search and replace all instances of <strong>Demo-UUID</strong> with your unique <strong>Demo-UUID</strong>.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong>  or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>Demo-UUID</strong>.  In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 6"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong> or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field. In the first entry field, enter <strong>Demo-UUID</strong>. In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 6"</strong> message. Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
 <p><img alt="" src="../_attachments/0122-kafkaVersionYAML-modify.png" /></p>
 <ol start="7">
 <li>Click <strong>Add</strong>.</li>
 </ol>
 <details class="failure">
 <summary>Is the <strong>Add</strong> button not enabled?</summary>
-<p>If the <strong>Add</strong> button isn't enabled, there is a problem with your YAML.  YAML is very sensitive to formatting. Make sure you cut &amp; paste the YAML instead of entering it manually.</p>
+<p>If the <strong>Add</strong> button isn't enabled, there is a problem with your YAML. YAML is very sensitive to formatting. Make sure you cut &amp; paste the YAML instead of entering it manually.</p>
 </details>
 <ol start="8">
 <li>Repeat the process and create a <strong>version</strong> called <strong>food-delivery-backend</strong>.</li>
@@ -1205,7 +1205,7 @@
 <ol start="9">
 <li>Search and replace all instances of <strong>Demo-UUID</strong> with your unique <strong>Demo-UUID</strong>.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong>  or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>Demo-UUID</strong>.  In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 11"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong> or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field. In the first entry field, enter <strong>Demo-UUID</strong>. In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 11"</strong> message. Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
 <ol start="10">
 <li>
 <p>Click <strong>Add</strong>.</p>
@@ -1261,7 +1261,7 @@
 <ol start="12">
 <li>Search and replace all instances of <strong>Demo-UUID</strong> with your unique <strong>Demo-UUID</strong>.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong>  or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>Demo-UUID</strong>.  In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 2"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong> or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field. In the first entry field, enter <strong>Demo-UUID</strong>. In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 2"</strong> message. Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
 <ol start="13">
 <li>
 <p>Click <strong>Add</strong>.</p>
@@ -1317,7 +1317,7 @@
 <ol start="15">
 <li>Search and replace all instances of <strong>Demo-UUID</strong> with your unique <strong>Demo-UUID</strong>.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong>  or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>Demo-UUID</strong>.  In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 2"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong> or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field. In the first entry field, enter <strong>Demo-UUID</strong>. In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 2"</strong> message. Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
 <ol start="16">
 <li>
 <p>Click <strong>Add</strong>.</p>
@@ -1446,7 +1446,7 @@
 <ol start="18">
 <li>Search and replace all instances of <strong>Demo-UUID</strong> with your unique <strong>Demo-UUID</strong>.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong>  or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong>  (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>Demo-UUID</strong>.  In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 16"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong> or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field. In the first entry field, enter <strong>Demo-UUID</strong>. In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 16"</strong> message. Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
 <ol start="19">
 <li>
 <p>Click <strong>Add</strong>.</p>
@@ -1575,7 +1575,7 @@
 <ol start="21">
 <li>Search and replace all instances of <strong>Demo-UUID</strong> with your unique <strong>Demo-UUID</strong>.</li>
 </ol>
-<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong>  or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field.  In the first entry field, enter <strong>Demo-UUID</strong>.  In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 16"</strong> message.  Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
+<p>The YAML editor in the IBM Cloud portal has a <strong>search and replace</strong> function. Type <span class="keys"><kbd class="key-control">Ctrl</kbd></span><strong>+f</strong> or <span class="keys"><kbd class="key-command">Cmd</kbd></span><strong>+f</strong> (this will vary depending on your computers operating system). Expand the dialog by clicking the <img alt="" src="../_attachments/expandIcon.png" /> icon next to the entry field. In the first entry field, enter <strong>Demo-UUID</strong>. In the second entry field, enter your unique <strong>Demo-UUID</strong>. The dialog should update with a <strong>"1 of 16"</strong> message. Click the <strong>replace all</strong> <img alt="" src="../_attachments/replaceAllicon.png" /> icon to make the changes.</p>
 <ol start="22">
 <li>
 <p>Click <strong>Add</strong>.</p>
