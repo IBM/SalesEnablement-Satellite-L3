@@ -482,7 +482,7 @@
   
     <li class="md-nav__item">
       <a href="../01.01%20Introduction/" class="md-nav__link">
-        Introduction
+        Introduction and terminology
       </a>
     </li>
   
@@ -750,12 +750,13 @@
 
 <p>At this point, the application should be identically deployed to both the development (AWS) and production (IBM Cloud) clusters. This can be verified by looking at the OpenShift console for the development cluster running at the IBM Cloud Satellite Location in AWS and the cluster running in IBM Cloud.</p>
 <ol>
-<li>Open the IBM Cloud portal to the Clusters: <a href="https://cloud.ibm.com/satellite/clusters" target="_blank">https://cloud.ibm.com/satellite/clusters</a>.</li>
+<li>If not already open, open the IBM Cloud portal to the Clusters: <a href="https://cloud.ibm.com/satellite/clusters" target="_blank">https://cloud.ibm.com/satellite/clusters</a>.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-ClustersList.png" /></p>
 <ol start="2">
-<li>Click the <strong>aws-os-cluster</strong> link.</li>
+<li>Click the <strong>aws-os-cluster</strong> label.</li>
 </ol>
+<p>Be sure to click the correct label as illustrated in the image below.</p>
 <p><img alt="" src="../_attachments/0122-ClustersList-AWS.png" /></p>
 <ol start="3">
 <li>Click the <strong>Manage cluster</strong> button.</li>
@@ -766,27 +767,32 @@
 <li>Click the <strong>OpenShift web console</strong> button.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-ClusterOverview-AWS.png" /></p>
-<p>This will open a new browser window or tab to the OpenShift web console for the cluster.</p>
+<p>This will open a new browser window or tab to the OpenShift web console for the cluster. You may need to close any pop-up dialogs regarding tutorials.</p>
 <ol start="5">
-<li>If not already selected, select the <strong>project</strong> based upon your <strong>Demo-UUID</strong> from the <strong>Topology</strong> view.</li>
+<li>
+<p>Click the <strong>Topology</strong> link in left hand navigation.</p>
+</li>
+<li>
+<p>If not already selected, select the <strong>project</strong> based upon your <strong>Demo-UUID</strong> from the <strong>Topology</strong> view.</p>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The image capture below is different than what you will see. Be sure and select the project (namespace) created for you based upon your <strong>Demo-UUID</strong>.</p>
 </div>
 <p><img alt="" src="../_attachments/0122-OS-SelectProject.png" /></p>
-<ol start="6">
+<ol start="7">
 <li>Verify all the <strong>Deployments</strong> for the Food Delivery application are present.</li>
 </ol>
 <p>The image capture below may differ slightly from what you see. It is important to point out the <strong>Deployments</strong> represented here were created from the <strong>Subscriptions</strong> to the <strong>Versions</strong> you created for the <strong>Configuration</strong>. Notice that some of the <strong>Deployments</strong> have routes added to them. Routes are represented by the <img alt="" src="../_attachments/routeIcon.png" />.</p>
 <p><img alt="" src="../_attachments/0122-OS-FD-Deployments.png" /></p>
-<ol start="7">
+<ol start="8">
 <li>Verify the application frontend is running by clicking the route icon <img alt="" src="../_attachments/routeIcon.png" /> for the <strong>example-food</strong> deployment.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-OS-FD-DeploymentsRoute.png" /></p>
 <p>A new browser window or tab should be opened to the Food Delivery application frontend.</p>
 <p><img alt="" src="../_attachments/0122-OS-FD-FrontEnd-Application.png" /></p>
-<ol start="8">
+<ol start="9">
 <li>Explore the Food Delivery application.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-OS-FD-FrontEnd-Application-2.png" /></p>
@@ -795,7 +801,7 @@
 <p class="admonition-title">Warning</p>
 <p>You may experience a delay in the application reporting orders being fulfilled.  This usually occurs when the demonstration environment is experiencing heavy usage or starting for the first time. You can increase the speed of couriers and speed of kitches by adjusting the sliders. R</p>
 </div>
-<ol start="9">
+<ol start="10">
 <li>Repeat steps 2 thru 9 for the production environment cluster: <strong>ibmcloud-wdc-os</strong>.</li>
 </ol>
 <p>Use this link to open the IBM Cloud OpenShift clusters page: <a href="https://cloud.ibm.com/kubernetes/clusters?platformType=openshift" target="_blank">https://cloud.ibm.com/kubernetes/clusters?platformType=openshift</a>.</p>

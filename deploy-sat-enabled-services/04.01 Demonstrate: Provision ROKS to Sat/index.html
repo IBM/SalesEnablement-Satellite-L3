@@ -490,7 +490,7 @@
   
     <li class="md-nav__item">
       <a href="../../deploy-application/01.01%20Introduction/" class="md-nav__link">
-        Introduction
+        Introduction and terminology
       </a>
     </li>
   
@@ -769,10 +769,10 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The IBM Cloud Portal will be opened in a new browser tab. You need to switch between this tab and the new tab to accomplish many of the tasks. You may want to open the new ta in a new window and display both browser windows at the same time. You may need to disable pop-up blockers if you do not see the new tab. Also, Firefox and Safari browsers are recommended as the image quality of screen captures when viewed in Chrome are sub-optimum.</p>
+<p>The IBM Cloud Portal will be opened in a new browser tab. You need to switch between this tab and the new tab to accomplish many of the tasks. You may want to open the new tab in a new window and display both browser windows at the same time. You may need to disable pop-up blockers if you do not see the new tab. Also, Firefox and Safari browsers are recommended as the image quality of screen captures when viewed in Chrome are sub-optimum.</p>
 </div>
 <p><img alt="" src="../_attachments/0122-Satellite-CloudCatalog.png" /></p>
-<p>Sample dialog:</p>
+<p>Sample dialog: The current catalog for IBM Cloud Satellite enabled services include IBM Cloud Databases like etcd, PostgreSQL, Redis, and RabbitMQ.  In addition, IBM Event Streams is available and provides a high-throughput message bus with Apache Kafka. There is also IBM Key Protect for IBM Cloud for managing cyrotographic keys for data protection.  And we also support Red Hat OpenShift on IBM Cloud as well as Cloud Object Storage.</p>
 <ol start="2">
 <li>If you haven't already, change from your IBM Cloud account to the demonstration IBM Cloud account: <strong>2435442 - ITZ - Satellite</strong>*.</li>
 </ol>
@@ -785,40 +785,40 @@
 <li>Click the <strong>Red Hat OpenShift on IBM Cloud</strong> tile.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatEnabledCloudCatalog-2.png" /></p>
-<p>Sample dialog:</p>
+<p>Sample dialog: For this demonstration, I'll show you how simple it is to deploy these Satellite enabled services.  Red Hat OpenShift on IBM Cloud provides a managed container platform for running enterprise workloads in Kubernetes clusters. With OpenShift on IBM Cloud, you only need to focus on your applications and IBM will manage the platform.</p>
 <ol start="4">
 <li>Select the <strong>Satellite</strong> tile under the <strong>Infrastructure</strong> section.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatelliteInfrastructure.png" /></p>
-<p>Sample dialog:</p>
+<p>Sample dialog: Red Hat OpenShift on IBM Cloud is support in the IBM Cloud classic and Virtual Private Cloud (VPC) environments, as well as Satellite.</p>
 <ol start="5">
 <li>In the <strong>Location</strong> section, select the <strong>aws-us-east-2</strong> location in the table.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatelliteLocation-notselected.png" /></p>
-<p>Sample dialog:</p>
+<p>Sample dialog: Once I select Satellite, I just need to specify the IBM Cloud Satellite location where I want to deploy OpenShift. As a prerequisite, the Satellite Location will need hosts available inorder for the deployment to succeed. As you will recall, when we created our Satellite Location, we provisioned 3 hosts for the control plane, and 9 hosts as worker nodes. I'll use those 9 hosts as my OpenShift worker nodes, place 3 in each of the 3 availability zones in our Satellite Location.</p>
 <ol start="6">
 <li>Change cluster name to aws_os_cluster.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatelliteClusterName.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Important</p>
-<p>By the time you specify a name, the <strong>Create</strong> button at the far right of the portal would typically be enabled.  Since you do not have the appropriate permissions in this account to create a new cluster, the button remains disabled.  Now is the time to explain how happens if you were to click create.</p>
+<p>By the time you specify a name, the <strong>Create</strong> button at the far right of the portal would typically be enabled.  Since you do not have the appropriate permissions in this account to create a new cluster, the button remains disabled.  Now is the time to explain what happens if you were to click create.</p>
 </div>
-<p>Sample dialog:</p>
+<p>Sample dialog: That is all the information that is required.  Now jsut click create and let the automated provisioning begin. When I originally provisioned the OpenShift environment in the AWS Satellite Location, it took about 50 minutes for the entire installation and configuration of the OpenShift cluster. Let us now look at an already provisioned cluster in our Satellite location.</p>
 <ol start="7">
 <li>Click the <img alt="" src="../_attachments/0122-IBMCloudMenu.png" /> menu and select <strong>Satellite-&gt;Clusters</strong>.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatelliteClusterMenu.png" /></p>
 <ol start="8">
-<li>Click the <strong>aws_os_cluster in the </strong>Clusters** table.</li>
+<li>Click <strong>aws_os_cluster</strong> in the <strong>Clusters</strong> table.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatelliteClusters.png" /></p>
-<p>Sample dialog:</p>
+<p>Sample dialog: Here you see the cluster we provisioned and the cluster's current status.</p>
 <ol start="9">
 <li>Time to wrap up this part of the demonstration.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-SatelliteClusterDetails.png" /></p>
-<p>Sample dialog:</p>
+<p>Sample dialog: We can retrieve the details of the cluster and manage it using the IBM Cloud portal as well as the OpenShift web console. From a Red Hat OpenShift on IBM Cloud perspective, this cluster is just like any other Red Hat OpenShift on IBM Cloud cluster running in IBM Cloud.</p>
 
               
             </article>
