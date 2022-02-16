@@ -134,11 +134,33 @@ deleteVersions() {
 #
 #---------------------------------------------------------------------------------------------
 deleteSubscriptions() {
-	for subName in ${SUBSCRIPTIONS[@]}
+#	for subName in ${SUBSCRIPTIONS[@]}
+#	do
+#		echo Deleting subscription ${subName}
+#		ibmcloud sat subscription rm --subscription ${subName} -f
+#	done
+
+	ibmcloud sat config get --config ${USER_NAMESPACE} --output json | jq -r '.subscriptions[]|"\(.uuid) \(.name)"'   | while read subUUID subNAME
 	do
-		echo Deleting subscription ${subName}
-		ibmcloud sat subscription rm --subscription ${subName} -f
-	done
+		echo uuid = $subUUID name = $subNAME
+		# don't remove the namespace subscription until we get rid of everything in that openshift namespace first
+		if [[ "${subNAME}" == "${USER_NAMESPACE}-sub" ]]
+		then
+			echo skip ${USER_NAMESPACE}-sub
+		else
+                	echo removing subscription: ${subUUID}
+		        # ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f || errorOut "failed removing satellite subscriptions for: {$USER_NAMESPACE}"
+		        ibmcloud sat subscription rm --subscription ${subUUID} -f
+		fi
+  done
+
+  # don't remove the subscription for the namespaces
+  #  echo removing ${USER_NAMESPACE}-sub
+  #  ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f
+
+
+
+
 }
 
 
