@@ -30,7 +30,9 @@ export PROD_CLUSTER_GROUP="food-delivery-production-clusters"
 
 export SAT_ACCESS_GROUP="satellite-users"
 
-
+export SAT_CONFIG_CREATED=1
+export SAT_VERSION_CREATED=1
+export SAT_SUB_CREATED=1
 
 
 ####
@@ -46,6 +48,21 @@ export SAT_ACCESS_GROUP="satellite-users"
 ####
 function errorOut() {
 	echo "Failure: $1"
+	# before exiting, remove anything we created
+
+	if [ ${SAT_SUB_CREATED} -eq 0 ]
+	then
+		ibmcloud sat subscription rm --subscription ${USER_NAMESPACE}-sub -f
+	fi
+	if [ ${SAT_VERSION_CREATED} -eq 0 ]
+	then
+	  ibmcloud sat config version rm --config ${USER_NAMESPACE} --version ${USER_NAMESPACE} -f
+	fi
+	if [ ${SAT_CONFIG_CREATED} -eq 0 ]
+	then
+		ibmcloud sat config rm --config ${USER_NAMESPACE} -f
+  fi
+
 	exit 1
 }
 
@@ -130,6 +147,7 @@ function create_sat_resources() {
 	echo Create ${USER_NAMESPACE} satellite configuration
 
 	ibmcloud sat config create --name ${USER_NAMESPACE} || errorOut "failed creating satellite config  ${USER_NAMESPACE}"
+  SAT_CONFIG_CREATED=0
 
 	###
 	#
@@ -159,6 +177,7 @@ function create_sat_resources() {
 	echo create sat config version under ${USER_NAMESPACE} namespace using ${VER_FILE_NAME}
 
 	ibmcloud sat config version create --config ${USER_NAMESPACE} -name ${USER_NAMESPACE} --description "autocreated namespace version" --file-format yaml --read-config ${VER_FILE_NAME} || errorOut "failed creating satellite config version ${USER_NAMESPACE}"
+  SAT_VERSION_CREATED=0
 
 	echo erase ${VER_FILE_NAME}
 
@@ -175,7 +194,7 @@ function create_sat_resources() {
 	echo create sat subscriptions for all clusters
 
 	ibmcloud sat subscription create --name  ${USER_NAMESPACE}-sub --group "${DEV_CLUSTER_GROUP}" --group "${PROD_CLUSTER_GROUP}" --config ${USER_NAMESPACE} --version ${USER_NAMESPACE} || errorOut "failed creating satellite subscriptions for ${USER_NAMESPACE}"
-	
+	SAT_SUB_CREATED=0
 
 }
 
@@ -197,8 +216,8 @@ export USERID=$1
 export IBMUSERID=$2
 
 # for testing
-export USERID=andrew@jones-tx.com
-export IBMUSERID=IBMid-2700039NFT
+# export USERID=
+# export IBMUSERID=
 
 ####
 #
