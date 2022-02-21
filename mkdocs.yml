@@ -86,7 +86,7 @@ markdown_extensions:
 extra:
   learningplan:
     name: "IBM Cloud Satellite Sales Level 3"
-    url: "https://yourlearning/"
+    url: "https://yourlearning.ibm.com/activity/PLAN-7D757C8B58E7"
   tz_environment:
     name: "IBM Cloud Satellite - Sales Enablment L3"
     url: "https://techzone.ibm.com/my/reservations"
