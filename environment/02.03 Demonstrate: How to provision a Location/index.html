@@ -772,13 +772,12 @@
 <p>In this environment, you will not have the AWS credentials to input in the portal to provision an AWS Location. For this type of demo, you can use the "On-premises &amp; edge" location template instead of the AWS template and describe the differences based on what you saw in the provisioning video.</p>
 </div>
 <p>The steps below can be used as a guide for this style of demonstration:</p>
-<p><strong>Access the IBM Cloud Satellite overview page in the IBM Cloud portal</strong></p>
 <ol>
 <li>Launch the IBM Cloud portal: <a href="https://cloud.ibm.com/satellite/overview" target="_blank">https://cloud.ibm.com/satellite/overview</a>.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The IBM Cloud Portal will be opened in a new browser tab. You need to switch between this tab and the new tab to accomplish many of the tasks. You may want to open the new ta in a new window and display both browser windows at the same time. You may need to disable pop-up blockers if you do not see the new tab. Also, Firefox and Safari browsers are recommended as the image quality of screen captures when viewed in Chrome are sub-optimum.</p>
+<p>The IBM Cloud Portal will be opened in a new browser tab. You need to switch between this tab and the new tab to accomplish many of the tasks. You may want to open the new tab in a new window and display both browser windows at the same time. You may need to disable pop-up blockers if you do not see the new tab. Also, Firefox and Safari browsers are recommended as the image quality of screen captures when viewed in Chrome are sub-optimum.</p>
 </div>
 <ol start="2">
 <li>Change from your IBM Cloud account to the demonstration IBM Cloud account: <strong>2435442 - ITZ - Satellite</strong>*.</li>
@@ -786,7 +785,7 @@
 <p><img alt="" src="../_attachments/ChangeAccounts-2-a-gif.gif" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If your browser window is narrow, you may see this icon: <img alt="" src="../_attachments/SwitchAccountsIcon.png" /> instead of the current account name as shown in the screen capture above.</p>
+<p>If your browser window is narrow, you may see this icon: <img alt="" src="../_attachments/SwitchAccountsIcon.png" /> instead of the current account name as shown in the screen capture above. If you do not see the 2435442 - ITZ - Satellite listed, verify you accepted the invitation from IBM Cloud to join the account and that your IBM Technology Zone environment is active.</p>
 </div>
 <ol start="3">
 <li>Click <strong>Create a Satellite Location</strong>.</li>
@@ -821,8 +820,9 @@
 <ol start="9">
 <li>Click <strong>Hosts</strong>.</li>
 </ol>
+<p>Sort the table by clicking the <strong>Cluster</strong> menu item in the table header.</p>
 <p><img alt="" src="../_attachments/LocationHosts.png" /></p>
-<p>Sample dialog: Here we see the details for each host that has been deployed at our Satellite Location. Notice the <strong>Status</strong> and <strong>Availability</strong> fields. Sort the table by clicking the <strong>Cluster</strong> menu item in the table header. In this Location, we see that we have our 3 Control plane hosts and the other 9 are used by a Red Hat OpenShift cluster.</p>
+<p>Sample dialog: Here we see the details for each host that has been deployed at our Satellite Location. Notice the <strong>Status</strong> and <strong>Availability</strong> fields.  In this Location, we see that we have our 3 Control plane hosts and the other 9 are used by a Red Hat OpenShift cluster. These 9 hosts are the worker nodes in our Red Hat OpenShift cluster.</p>
 <ol start="10">
 <li>Click the <strong>Attach host</strong> button.</li>
 </ol>
