@@ -1,7 +1,7 @@
 #!/bin/bash
-# 
+#
 # to get the lastest version of this script run the following command
-# wget https://raw.githubusercontent.com/IBM/ibm-dte-openlab-samples/master/satellite/satelliteSwapIPs.bash
+# wget https://raw.githubusercontent.com/IBM/SalesEnablement-Satellite-L3/main/tools/satelliteSwapIPs.bash
 # chmod +x ./satelliteSwapIPS.bash
 #
 
@@ -18,8 +18,8 @@ export BIN="$HOME/bin"
 export AWS_DESCRIBE_INSTANCES="$HOME/awsInstances.txt"
 
 #---------------------------------------------------------------------------------------------
-# install AWS Command Line Interfaces 
-# will download, unzip, and install in to 
+# install AWS Command Line Interfaces
+# will download, unzip, and install in to
 # local directory since we don't have root access in Cloud Terminal
 #---------------------------------------------------------------------------------------------
 installAWSCLI () {
@@ -63,10 +63,10 @@ configureAWSCLI () {
 #---------------------------------------------------------------------------------------------
 addPublicIPs4CP () {
 	# add public IPs to Satellite Location configuration for control plane
-	
+
 	# build list string for command based upon arguements passed in
 	params=""
-	
+
 	for i in "$@"
 	do
 		params="$params --ip $i "
@@ -85,18 +85,18 @@ addPublicIPs4CP () {
 addPublicIPs4Workers () {
 	# add public IPs to Satellite Location configuration for worker nodes
 		# build list string for command based upon arguements passed in
-	
+
 	echo "Updating cluster IPs for worker nodes"
 	for i in "$@"
 	do
 		ibmcloud oc nlb-dns add --ip $i --cluster $clusterName --nlb-host $clusterHostname
 		#echo ibmcloud oc nlb-dns add --ip $i --cluster $clusterName --nlb-host $clusterHostname
 	done
-	
+
 # 		ibmcloud oc nlb-dns add --ip $clusterPIP1 --cluster $clusterName --nlb-host $clusterHostname
 # 		ibmcloud oc nlb-dns add --ip $clusterPIP2 --cluster $clusterName --nlb-host $clusterHostname
 # 		ibmcloud oc nlb-dns add --ip $clusterPIP3 --cluster $clusterName --nlb-host $clusterHostname
-	
+
 }
 
 #---------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ removePrivateIPs4Workers() {
 
 #---------------------------------------------------------------------------------------------
 # cleanup temporary files
-# 
+#
 #---------------------------------------------------------------------------------------------
 
 
@@ -165,10 +165,10 @@ yesno() {
 
 	read -p "$@" -n 1 -r
 	echo
-	
+
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		return 0 
+		return 0
 	elif [[ $REPLY =~ ^[Nn]$ ]]
 	then
 		return 1
@@ -243,9 +243,9 @@ do
 	# echo "looking for $IP"
 	# echo
 	## x=`awk {for(i=1;i<=NF;i++) {if(\$i==\"$IP\")print \$(i+1)}} $AWS_DESCRIBE_INSTANCES `
-	
+
 	x=$(awk "{for(i=1;i<NF;i++) {if(\$i==\"$IP\")print \$(i+1)}}" $AWS_DESCRIBE_INSTANCES)
-	
+
 	#echo x = $x
 	publicControlPlaneIPS="$publicControlPlaneIPS $x"
 	#echo $publicControlPlaneIPS
