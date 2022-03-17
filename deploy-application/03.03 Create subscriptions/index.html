@@ -834,17 +834,23 @@
 <p>Immediately after clicking create, notice the new Subscription appears in the <strong>Subscriptions</strong> table.
 Initially, the <strong>Rollout status</strong> shows <strong>"---"</strong>. After a few seconds, this should change to <strong>2 deployed</strong>.</p>
 <p><img alt="" src="../_attachments/0122-KafkaSubscriptionCreated.png" /></p>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If the status doesn't update automatically, click the page refresh button of your browser.</p>
 </div>
 <ol start="7">
 <li>Click the <strong>kafka-mongo-redis-on-all-clusters</strong> entry in the table and view the Subscription details.</li>
 </ol>
 <p><img alt="" src="../_attachments/0122-KafkaSubscriptionDeployedDetails.png" /></p>
+<details class="failure">
+<summary>Do you see errors?</summary>
+<p>If you see an "Unable to fetch header secret data." error for the aws_os_cluster cluster like shown below, you need to re-run the command to synchronize the Role-based access controls for the IBM Cloud Satellite Location that you executed in <strong><a href="../../environment/04.01 Using the IBM Cloud command line interfaces (CLIs)">Part 1: Using the IBM Cloud command line interfaces (CLIs)</a></strong>, steps 1 and 2.</p>
+<p><img alt="" src="../_attachments/AWSFetchHeaderError.png" /></p>
+<p>Occassionally, you may see a deployment fail for other reasons. Satellite config will continue to try to fulfill the subscription. If you see a failure, wait a few minutes and then refresh your browser page to get the latest status. If you continue to see failures, you need to verify the versions created in the previous step are correct. Make sure you successfully replaced all instances of <strong>#######abc-ns</strong> with your <strong>Demo-UUID</strong>. If the failures continue, please report the issue using the slack channel specified in TechZone.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Occassionally, you may see a deployment fail. Satellite config will continue to try to fulfill the subscription. If you see a failure, wait a few minutes and then refresh your browser page to get the latest status. Also, in some circumstances, you may see more than 2 entries in the details section. As long as you have a successful deployment to both aws_os_cluster and ibmcloud-wdc-os, you can continue. If you continue to see failures, you need to verify the versions created in the previous step are correct. Make sure you successfully replaced all instances of <strong>#######abc-ns</strong> with your <strong>Demo-UUID</strong>. If the failures continue, please report the issue using the slack channel specified in TechZone.</p>
+<p>In some circumstances, you may see more than 2 entries in the details section. As long as you have a successful deployment to the specified cluster groups, you can continue.</p>
 </div>
 <ol start="8">
 <li>Click your <strong>configuration</strong> link to return to the configuration page.</li>
@@ -889,9 +895,13 @@ Initially, the <strong>Rollout status</strong> shows <strong>"---"</strong>. Aft
 </tr>
 </tbody>
 </table>
-<p>To avoid typographical errors, use the <img alt="" src="../_attachments/CopyToClipboard.png" /> to copy the values below and paste into the <strong>Subscription name</strong> field.
+<p>To avoid typographical errors, use the <img alt="" src="../_attachments/CopyToClipboard.png" /> to copy the values below and paste into the <strong>Subscription name</strong> field.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pay special attention to the cluster group(s) that need to be specified for each subscription as shown in the table above! Specifying the wrong group(s) will cause problems with the demonstration.</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>backend-on-all-clusters
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>frontend-on-dev-clusters
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>frontend-on-prod-clusters
