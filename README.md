@@ -6,4 +6,4 @@ Note: the live environment that can be leveraged with this script is only availa
 
 Feedback, suggestions, contributions can be provided using this repositories issues or via IBM internal slack support channels.
 
-As the majority of this repository is "content" and not code, there are not specific coding standards followed. MkDOCS and several related plug-ins are used for presenation purposes. 
+As the majority of this repository is "content" and not code, there are not specific coding standards followed. MkDOCS and several related plug-ins are used for presenation purposes.  All contributions made are subject to review by IBM and the IBM employees responsible for the content.
