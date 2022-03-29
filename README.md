@@ -5,3 +5,5 @@ This repository contains the IBM Cloud Satellite - Sales Enablement Level 3 Demo
 Note: the live environment that can be leveraged with this script is only available to IBM sellers and IBM Business Partners.
 
 Feedback, suggestions, contributions can be provided using this repositories issues or via IBM internal slack support channels.
+
+As the majority of this repository is "content" and not code, there are not specific coding standards followed. MkDOCS and several related plug-ins are used for presenation purposes. 
