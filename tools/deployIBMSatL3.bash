@@ -79,6 +79,39 @@ USER_NAMESPACE=${USER_NAMESPACE,,}
 #echo USER_NAMESPACE=${USER_NAMESPACE}
 }
 
+
+#---------------------------------------------------------------------------------------------
+# Syncrhonize role-based access controls
+#
+#---------------------------------------------------------------------------------------------
+syncRBAC() {
+	# Synchronize the Role-based access controls (RBAC) for the IBM Cloud Satellite Location's OpenShift cluster.
+	# The command forces the RBAC to be syncronized between IBM Cloud and the Red Hat OpenShift cluster running in the IBM Cloud Satellite Location.
+	# If this command is not run, issues may be encountered later in this demonstration.
+
+	# need to get {{ aws.cluster_id }} with from mkdocs.yaml
+
+
+	# yq is old in IBM Cloud shell so just using grep to get the ingress values  from MKDOCS
+  if [ ! -f mkddocs.yml ]
+	then
+		echo getting mkdocs.yml
+		wget ${WGET_OPTIONS} ${GITREPO_RAW_URL_BASE}/${MKDOCS}  || {
+			echo "Unable to get mkdocs.yml from git repository."
+			echo "Exiting"
+			exit 1
+		}
+	fi
+
+	# AWS_CLUSTER_ID=`grep cluster_id mkdocs.yml | cut -f2 -d':'| sed -e "s/^ *//g"`
+	AWS_CLUSTER_ID=`yq r mkdocs.yml 'extra.aws.cluster_id'`
+	AWS_CLUSTER_ID=${AWS_CLUSTER_ID##*( )}
+
+	ibmcloud ks cluster config --cluster ${AWS_CLUSTER_ID}
+
+
+}
+
 #---------------------------------------------------------------------------------------------
 # get all the YAML files from git repo
 #
@@ -287,6 +320,9 @@ getUserNamespace
 # download all YAML files for versions and mkdocs.yml
 echo
 yesno "Do you want to retrieve all the YAML files from the git repository (${GITREPO_RAW_URL_BASE}) (y|n)? " && getAllYAMLFiles || echo "Skipping download of YAML files."
+
+echo
+yesno "Sync RBAC credentials? (y|n)? " && syncRBAC || echo "Skipping RBAC sync."
 
 # verify the users configuration actually exists
 echo
