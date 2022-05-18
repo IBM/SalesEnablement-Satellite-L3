@@ -202,7 +202,7 @@ yesno "Do you want to configure the AWS CLI (y|n)? " && configureAWSCLI || echo 
 
 ### get Satellite Location name/ID
 echo
-echo "Enter your Satellite Location name or ID: "
+echo "Enter your Satellite Location name: "
 read location
 export location
 
