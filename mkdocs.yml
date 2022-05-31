@@ -100,5 +100,5 @@ extra:
     ingress: aws-os-cluster-222b3514854c2221251113b2b051506c-0000.upi.containers.appdomain.cloud
   ibm:
     cluster_name: ibmcloud-wdc-os
-    cluster_id: c7o68suw0jvhnc82ukg0
+    cluster_id: cab66ouw097nu74c4gmg
     ingress: ibmcloud-wdc-os-222b3514854c2221251113b2b051506c-0000.us-east.containers.appdomain.cloud
